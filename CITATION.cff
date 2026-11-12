@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you reference this prototype in research, teaching or a review, cite it as below."
+title: "PROHOR: mission health intelligence for astronaut self-assessment"
+abstract: >-
+  A local-first, non-diagnostic research prototype that records crew health indicators, compares
+  each reading against a personal baseline computed from distinct prior days, exposes the rule and
+  the data coverage behind every flag, and exports a structured handover packet for human review.
+  Includes an in-browser, hash-verified comparison of 531 published NASA OSDR OSD-575 observations.
+type: software
+license: MIT
+version: 3.0.0
+repository-code: "https://github.com/tufayelahmedsuhagcc-dotcom/Proho"
+url: "https://prohor-rho.vercel.app"
+keywords:
+  - astronaut health
+  - NASA Space Apps Challenge
+  - personal baseline
+  - human research program
+  - offline-first
+  - non-diagnostic
+authors:
+  - name: "PROHOR team"
+    website: "https://github.com/tufayelahmedsuhagcc-dotcom"

@@ -11,6 +11,16 @@
 
 ![PROHOR mission overview](docs/screenshots/overview-desktop.png)
 
+### In a hurry?
+
+| If you have                 | Start here                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — open it, press _Explore the mission replay_            |
+| **2 minutes**               | [SUBMISSION.md](SUBMISSION.md) — what it is, how it maps to the judging criteria, and the demo path          |
+| **5 minutes**               | [docs/METHODOLOGY.md](docs/METHODOLOGY.md) — the baseline rule, its floors, and what the numbers cannot mean |
+| **A technical review**      | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) → [docs/TEST-REPORT.md](docs/TEST-REPORT.md) → `npm test`       |
+| **An accessibility review** | [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md) — what was measured, and what was not                         |
+
 ---
 
 ## The problem
@@ -174,6 +184,8 @@ medical information.
 | [docs/TEST-REPORT.md](docs/TEST-REPORT.md)                 | Executed tests, scope and honest coverage gaps                      |
 | [docs/SECURITY.md](docs/SECURITY.md)                       | Threat model, data handling, known limitations                      |
 | [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)                 | 30-second video script and 7-slide deck outline                     |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)               | Modules, data flow, trust boundaries, build pipeline                |
+| [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)             | Implemented affordances, measured contrast, unverified gaps         |
 | [docs/THIRD-PARTY-NOTICES.md](docs/THIRD-PARTY-NOTICES.md) | Library, font and dataset notices                                   |
 
 ## AI assistance
@@ -187,6 +199,12 @@ test is recorded. No runtime AI service receives user readings.
 
 Built for the 2026 NASA Space Apps Challenge, **The Next Frontier** theme.
 Team and contributors: see [SUBMISSION.md](SUBMISSION.md).
+
+## Citation and contributing
+
+Machine-readable metadata lives in [CITATION.cff](CITATION.cff), so GitHub offers a _Cite this
+repository_ button. Contributions follow [CONTRIBUTING.md](CONTRIBUTING.md) and
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Licence
 
