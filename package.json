@@ -5,10 +5,10 @@
   "homepage": "https://prohor-rho.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tufayelahmedsuhagcc-dotcom/Proho.git"
+    "url": "git+https://github.com/tufayelahmedsuhagcc-dotcom/prohor.git"
   },
   "bugs": {
-    "url": "https://github.com/tufayelahmedsuhagcc-dotcom/Proho/issues"
+    "url": "https://github.com/tufayelahmedsuhagcc-dotcom/prohor/issues"
   },
   "keywords": [
     "nasa-space-apps",

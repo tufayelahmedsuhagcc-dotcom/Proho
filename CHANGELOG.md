@@ -1,6 +1,6 @@
 # Change log
 
-Versions describe the delivered application, not a release calendar.
+Notes describe the shipped application. Release dates are deliberately omitted; the git history is the timeline.
 
 ## 3.0.0 — white-build release
 

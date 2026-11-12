@@ -56,5 +56,5 @@ page states what was implemented, what was actually measured, and what remains u
   evidence, not a certificate.
 
 If you are reviewing this project and find a barrier, that is a defect worth reporting under
-[issues](https://github.com/tufayelahmedsuhagcc-dotcom/Proho/issues) — it will be handled as a
+[issues](https://github.com/tufayelahmedsuhagcc-dotcom/prohor/issues) — it will be handled as a
 correctness problem, not a polish item.

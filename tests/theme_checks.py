@@ -1,6 +1,6 @@
-"""White-theme regression checks against the production server.
+"""Theme, contrast and interaction regression checks against the production server.
 
-Run: python tests/white_theme.py
+Run: python tests/theme_checks.py
 Requires the same Playwright installation as the existing browser tests.
 """
 import asyncio
@@ -12,8 +12,8 @@ from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 URL = os.getenv('PROHOR_URL', 'http://127.0.0.1:3000')
-REPORT = ROOT / 'docs/test-results/white-theme'
-SHOTS = ROOT / 'docs/screenshots/white-theme'
+REPORT = ROOT / 'docs/test-results/theme'
+SHOTS = REPORT / 'screenshots'
 REPORT.mkdir(parents=True, exist_ok=True)
 SHOTS.mkdir(parents=True, exist_ok=True)
 results = []

@@ -148,7 +148,7 @@ A separate fresh-process check fetched real NASA and NOAA responses. Later API h
 
 Reference-link checks returned HTTP 200 for the NASA research/HRP links, Nature context and NOAA documentation (with its current redirect). Python requests encountered a local certificate-chain verification error at the Space Apps challenge URL; that page had been successfully read through the page-fetching tool. This is recorded as an environment access issue, not falsely reported as a validated HTTP 200 from that checker.
 
-## 5. Build, offline and delivery checks
+## 5. Build, offline and packaging checks
 
 - Clean install and typechecked production build succeeded after dependency upgrades.
 - Final entry bundle: approximately **472.48 kB** uncompressed, **144.60 kB gzip**, as reported by Vite. This is bundle size, not a Lighthouse/load-time benchmark.

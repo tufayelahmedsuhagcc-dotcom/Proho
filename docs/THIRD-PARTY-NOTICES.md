@@ -4,8 +4,6 @@
 
 The 3.0 source, custom SVG mark, body schematic, interface, deterministic fixture and tests were produced with AI assistance through **Arena.ai**, disclosed openly. There is no runtime language model. The anatomy is a coded schematic: not a clinical scan, not a copied medical illustration. Human review precedes any scientific claim.
 
-The original supplied PROHOR export is preserved separately. It is not silently relicensed by the new application's license.
-
 ## Libraries and fonts
 
 Dependency versions are locked in `package-lock.json`; `npm ci` reproduces them. Their upstream licenses apply separately from PROHOR's original code.
@@ -34,13 +32,10 @@ Font license texts are included in `docs/licenses/`. Dependencies' distributed n
 - NASA Human Research Program: hazards, Standard Measures and sleep-risk context. These references do not validate PROHOR's heuristic thresholds.
 - NOAA Space Weather Prediction Center: planetary Kp observations. NOAA is identified separately from NASA.
 - No code, branding, assets or model from any other Space Apps project is incorporated into this application.
-- Supplied participant/build guides: retained as user-provided reference extracts, with source links and authority/date caveats. They are not software under PROHOR's license.
+- The repository contains no third-party article text, slide deck or video. External material is
+  cited by link, not copied.
 
 NASA hosting does not make every contributor-created dataset or participant project public-domain software. Check each source's terms and attribution requirements before redistribution. No NASA insignia or Space Apps logo is used to imply affiliation. Names and source links identify references, not sponsors or endorsers.
-
-## Publication check
-
-The editable delivery includes private-review research extracts for the user's continuity. Before making the whole folder public, review third-party guide/material permissions and replace full extracts with links/summaries where appropriate. Original NASA data provenance and references should remain available. Do not publish private health records or browser backup files.
 
 ## Licence scope
 

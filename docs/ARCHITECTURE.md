@@ -67,7 +67,7 @@ does not flag.
 4. **`.gitattributes` pins the CSVs as binary** (`*.csv -text`) so a clone cannot silently rewrite
    line endings and break that hash check.
 
-## Build and delivery
+## Build and packaging
 
 ```text
 vite build → web/  (content-hashed assets)

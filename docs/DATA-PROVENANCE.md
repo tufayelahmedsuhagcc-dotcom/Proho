@@ -97,8 +97,12 @@ Normal app refreshes do not overwrite the raw archive or committed snapshots. To
 
 Never merely change the expected hash to silence a checksum failure. A hash confirms identity relative to the stored manifest; it is not proof of scientific correctness or authenticity against an attacker who can modify both files.
 
-## Failed or inaccessible integrations
+## Integrations considered and not used
 
-The NASA `api.nasa.gov/DONKI/FLR` DEMO_KEY request returned 404 in this environment, and a CCMC alternative encountered a TLS connection failure. Neither failed response was treated as data. The working environmental integration is NOAA Kp, accurately attributed. No private credentials or API keys are required to run the project.
+Space-weather flares (NASA DONKI) and a CCMC alternative were evaluated and dropped: the first
+returned 404 without a key and the second failed its TLS handshake during evaluation, and a failed
+response is not data. NOAA planetary Kp is the environmental integration that survives, and it is
+attributed as such. No private credentials or API keys are required to run the project.
 
-Original documentation's sensor/sync API routes were static or unsupported. They were not reused as verified data services.
+PROHOR consumes no sensor or device API. Measurements are typed or imported by the crew member,
+which is the only honest way to claim a local-first workspace without hardware on the test bench.

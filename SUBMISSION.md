@@ -13,11 +13,11 @@ Everything a judge needs, and the exact text to paste into the Space Apps projec
 | **Challenge** | [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) |
 | **Event** | 2026 NASA Space Apps Challenge — *The Next Frontier* |
 | **Live prototype** | https://prohor-rho.vercel.app |
-| **Source code** | https://github.com/tufayelahmedsuhagcc-dotcom/Proho |
+| **Source code** | https://github.com/tufayelahmedsuhagcc-dotcom/prohor |
 | **Demo video (30 s)** | _add link_ |
 | **Slides (≤7)** | [docs/demo/PROHOR-deck.pdf](docs/demo/PROHOR-deck.pdf) — _or export from the outline in [DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)_ |
 | **Licence** | MIT (OSI-approved, as required for judging) |
-| **Team** | _names + roles_ |
+| **Team** | PROHOR — members and roles listed on the Space Apps project page |
 
 **Suggested award category:** *Best Use of Data* (strong alternative: *Best Use of Science*).
 Reason: the differentiator is not the interface, it is that every flag is traceable to a
@@ -109,8 +109,6 @@ the submission.
 
 ## 7. Team
 
-| Name | Role |
-|---|---|
-| _add_ | _add_ |
+Members are registered on the Space Apps team page (limit six) and listed there with their roles.
 
 _Independent project. Not NASA software._

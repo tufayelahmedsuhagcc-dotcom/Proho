@@ -5,9 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520.19-0f766e.svg)](package.json)
 [![Live demo](https://img.shields.io/badge/demo-prohor--rho.vercel.app-0f766e.svg)](https://prohor-rho.vercel.app)
-[![CI](https://github.com/tufayelahmedsuhagcc-dotcom/Proho/actions/workflows/ci.yml/badge.svg)](https://github.com/tufayelahmedsuhagcc-dotcom/Proho/actions/workflows/ci.yml)
+[![CI](https://github.com/tufayelahmedsuhagcc-dotcom/prohor/actions/workflows/ci.yml/badge.svg)](https://github.com/tufayelahmedsuhagcc-dotcom/prohor/actions/workflows/ci.yml)
 
-**Live prototype:** [prohor-rho.vercel.app](https://prohor-rho.vercel.app) · **Source:** [github.com/tufayelahmedsuhagcc-dotcom/Proho](https://github.com/tufayelahmedsuhagcc-dotcom/Proho) · **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) (2026 NASA Space Apps Challenge)
+**Live prototype:** [prohor-rho.vercel.app](https://prohor-rho.vercel.app) · **Source:** [github.com/tufayelahmedsuhagcc-dotcom/prohor](https://github.com/tufayelahmedsuhagcc-dotcom/prohor) · **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) (2026 NASA Space Apps Challenge)
 
 ![PROHOR mission overview](docs/screenshots/overview-desktop.png)
 
@@ -124,7 +124,7 @@ python -m playwright install chromium
 python tests/e2e.py
 python tests/browser_hardening.py
 python tests/browser_sweep.py
-python tests/white_theme.py
+python tests/theme_checks.py
 ```
 
 [TEST-REPORT.md](docs/TEST-REPORT.md) records what was executed, against which build, and the

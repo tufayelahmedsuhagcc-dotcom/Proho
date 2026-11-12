@@ -2,6 +2,8 @@
 import asyncio,json,pathlib,os
 from playwright.async_api import async_playwright
 ROOT=pathlib.Path(__file__).resolve().parents[1];URL=os.getenv('PROHOR_URL','http://127.0.0.1:3000');results=[]
+OUT = ROOT / 'docs/test-results'
+OUT.mkdir(parents=True, exist_ok=True)
 def check(name,value,detail=''):
  assert value, f'{name}: {detail}'
  results.append({'name':name,'passed':True,'detail':detail});print('PASS',name,flush=True)

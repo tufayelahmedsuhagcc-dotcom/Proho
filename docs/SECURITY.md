@@ -37,8 +37,8 @@ Browser workflow tests recorded zero health-record POST requests. That observati
 - Browser storage can be cleared, denied, evicted or exhausted. JSON backups are essential. Private browsing may not persist data.
 - Storage events synchronize ordinary tab changes, but simultaneous writes are not transactional. Prefer one active editing tab.
 - No real device, signal-quality hardware integration, clock synchronization or sensor calibration service is implemented.
-- No API rate-limiter, production monitoring, formal penetration test or high-availability infrastructure is supplied. The public adapter has in-process caching and is read-only; add deployment controls before broad public use.
-- The development server accepts preview hosts and must not be treated as hardened production hosting.
+- No API rate-limiter, production monitoring, formal penetration test or high-availability infrastructure is included. The public adapter has in-process caching and is read-only; add deployment controls before broad public use.
+- The development server accepts any host so preview URLs work; it is not hardened hosting.
 - This prototype was tested in Chromium automation. No comprehensive screen-reader, real-device, Safari/Firefox, flight hardware or adverse-network certification is claimed.
 - No regulated medical, HIPAA/GDPR compliance, NASA flight qualification or clinical effectiveness claim is made.
 

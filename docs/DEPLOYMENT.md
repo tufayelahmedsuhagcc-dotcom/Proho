@@ -71,7 +71,11 @@ Included `vercel.json` configures:
 
 Upload the whole project to a repository or your hosting provider, install from `package-lock.json`, and use the included settings. The function has a 30-second maximum duration; upstream calls time out earlier. No health data should be added as an environment variable or backend upload.
 
-**This configuration is supplied, but a deployment to your external Vercel account was not executed.** After deploying, independently test the public URL in a private browser, both `/api/feeds` variants, offline readiness, imports/exports and legacy paths. The workspace's live preview is not a permanent public submission URL.
+The live prototype runs on this configuration at **https://prohor-rho.vercel.app**. To deploy
+your own copy, import the repository into Vercel — `vercel.json` needs no edits — then check the
+public URL in a private window: both `/api/feeds` variants, offline readiness, an import and an
+export, and one legacy path. A preview URL from a development sandbox is not a public deployment;
+this one is.
 
 ## Data and storage
 
@@ -84,7 +88,9 @@ Browser key: `prohor.v3.workspace`, schema version 3. Same-origin tabs receive s
 - CSV import: `day,signal,value,unit`; optional `note,recordedAt`. `recordedAt`, when present, must be an ISO timestamp. Exported simulation or invalid-quality records are rejected as local numeric measurements. Use JSON for an exact backup/restore, not CSV.
 - Backup import validates version, units and data before confirmation. It replaces the local workspace only after explicit consent.
 
-The existing original website's browser storage is not automatically migrated. If you have original local entries you need to preserve, export them there before retiring that site and review/import authorized measurements using the new documented format.
+Storage is per origin: a different hostname — or a different port on localhost — starts with an
+empty workspace. Export a JSON backup from the old origin and restore it in Settings if you need
+to carry readings across.
 
 ## Troubleshooting
 
