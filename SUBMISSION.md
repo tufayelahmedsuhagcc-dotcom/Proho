@@ -6,20 +6,20 @@ Everything a judge needs, and the exact text to paste into the Space Apps projec
 
 ## 1. Identity
 
-| Field | Value |
-|---|---|
-| **Project title** | PROHOR — Mission Health Intelligence |
-| **Tagline** | A little farther from Earth. A little closer to you. |
-| **Challenge** | [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) |
-| **Event** | 2026 NASA Space Apps Challenge — *The Next Frontier* |
-| **Live prototype** | https://prohor-rho.vercel.app |
-| **Source code** | https://github.com/tufayelahmedsuhagcc-dotcom/prohor |
-| **Demo video (30 s)** | _add link_ |
-| **Slides (≤7)** | [docs/demo/PROHOR-deck.pdf](docs/demo/PROHOR-deck.pdf) — _or export from the outline in [DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)_ |
-| **Licence** | MIT (OSI-approved, as required for judging) |
-| **Team** | PROHOR — members and roles listed on the Space Apps project page |
+| Field                 | Value                                                                                                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Project title**     | PROHOR — Mission Health Intelligence                                                                                                                 |
+| **Tagline**           | A little farther from Earth. A little closer to you.                                                                                                 |
+| **Challenge**         | [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) |
+| **Event**             | 2026 NASA Space Apps Challenge — _The Next Frontier_                                                                                                 |
+| **Live prototype**    | https://prohor-rho.vercel.app                                                                                                                        |
+| **Source code**       | https://github.com/tufayelahmedsuhagcc-dotcom/prohor                                                                                                 |
+| **Demo video (30 s)** | _add link_                                                                                                                                           |
+| **Slides (≤7)**       | [docs/demo/PROHOR-deck.pdf](docs/demo/PROHOR-deck.pdf) — _or export from the outline in [DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)_                       |
+| **Licence**           | MIT (OSI-approved, as required for judging)                                                                                                          |
+| **Team**              | Skorpe Monad — five members, see §7                                                                                                                  |
 
-**Suggested award category:** *Best Use of Data* (strong alternative: *Best Use of Science*).
+**Suggested award category:** _Best Use of Data_ (strong alternative: _Best Use of Science_).
 Reason: the differentiator is not the interface, it is that every flag is traceable to a
 recomputed baseline and to a specific row of a NASA dataset that the user can inspect.
 
@@ -66,13 +66,13 @@ recomputed baseline and to a specific row of a NASA dataset that the user can in
 
 ## 3. How it maps to the judging criteria
 
-| Criterion | Evidence in this project |
-|---|---|
-| **Impact** | Targets the specific moment when a crew member is the only available assessor: a change that cannot wait for a delayed ground link. Reduces false reassurance (insufficient-data states are explicit) and reduces alarm fatigue (change floors, direction rules). |
-| **Creativity** | Inverts the usual "health dashboard" claim: instead of a score, PROHOR publishes its own uncertainty — baseline window, day count, missingness, rule direction — and makes the handover packet, not the alert, the product. |
-| **Validity** | Deterministic, unit-tested engine (127 automated checks) with documented formula and floors in [METHODOLOGY.md](docs/METHODOLOGY.md); real, hashed, cited NASA/NOAA data; every limitation stated in-product; explicit boundaries (no diagnosis, no dose estimate, no fitness-for-duty call). |
-| **Relevance** | Directly answers the 2026 challenge statement's objectives — gather indicators, help the astronaut evaluate status, guide action, explain measurements to a non-specialist — and uses NASA Human Research Program material to choose and frame the indicators. |
-| **Presentation** | Eleven coherent views, interactive anatomy, keyboard-operable controls, chart alternatives as tables, mobile and 320px layouts, offline install, 30-second demo path below. |
+| Criterion        | Evidence in this project                                                                                                                                                                                                                                                                      |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Impact**       | Targets the specific moment when a crew member is the only available assessor: a change that cannot wait for a delayed ground link. Reduces false reassurance (insufficient-data states are explicit) and reduces alarm fatigue (change floors, direction rules).                             |
+| **Creativity**   | Inverts the usual "health dashboard" claim: instead of a score, PROHOR publishes its own uncertainty — baseline window, day count, missingness, rule direction — and makes the handover packet, not the alert, the product.                                                                   |
+| **Validity**     | Deterministic, unit-tested engine (127 automated checks) with documented formula and floors in [METHODOLOGY.md](docs/METHODOLOGY.md); real, hashed, cited NASA/NOAA data; every limitation stated in-product; explicit boundaries (no diagnosis, no dose estimate, no fitness-for-duty call). |
+| **Relevance**    | Directly answers the 2026 challenge statement's objectives — gather indicators, help the astronaut evaluate status, guide action, explain measurements to a non-specialist — and uses NASA Human Research Program material to choose and frame the indicators.                                |
+| **Presentation** | Eleven coherent views, interactive anatomy, keyboard-operable controls, chart alternatives as tables, mobile and 320px layouts, offline install, 30-second demo path below.                                                                                                                   |
 
 ---
 
@@ -81,15 +81,15 @@ recomputed baseline and to a specific row of a NASA dataset that the user can in
 Use this exact order; each step is a real, working interaction.
 
 1. **Overview** — Demo mission, CDR-01, flight day 146: five indicators under review, each with its delta and baseline day count.
-2. **Health atlas** — select *Mind & recovery*: the panel states that sleep, mood and fatigue are check-ins, not brain measurements.
+2. **Health atlas** — select _Mind & recovery_: the panel states that sleep, mood and fatigue are check-ins, not brain measurements.
 3. **Trends & baselines** — open the same signal: prior-day median, IQR band, coverage, and the literal rule that fired.
 4. **NASA evidence** — pick glucose, then subject C001: original values, source row numbers, the recomputed pre-flight median of 80 mg/dL, and the shared interval caveat.
-5. **Log a reading** — save it; the app switches to *Local workspace* and reports insufficient prior data instead of borrowing the demo baseline. This is the honesty test.
+5. **Log a reading** — save it; the app switches to _Local workspace_ and reports insufficient prior data instead of borrowing the demo baseline. This is the honesty test.
 6. **Care plan → Crew handover** — mark the routine done, add a note, export the review packet.
 
 ---
 
-## 5. What we are *not* claiming
+## 5. What we are _not_ claiming
 
 Stated because it protects the crew it is designed for: PROHOR is a research prototype, not a
 medical device. It does not diagnose, recommend treatment or dosing, estimate radiation dose,
@@ -102,13 +102,25 @@ long-mission thresholds. No NASA endorsement is implied and no NASA mark is used
 AI assistance (Arena.ai) was used during development and was reviewed rather than trusted: data
 provenance is hashed, calculations are deterministic and unit-tested, and the executed test
 record is included. There is no runtime AI service — no user reading leaves the browser, and the
-product states this under *About → Privacy & attribution*. No watermarked AI imagery is used in
+product states this under _About → Privacy & attribution_. No watermarked AI imagery is used in
 the submission.
 
 ---
 
-## 7. Team
+## 7. Team — Skorpe Monad
 
-Members are registered on the Space Apps team page (limit six) and listed there with their roles.
+_Five people. One working prototype. A clearer next step for crew health._
+
+| Member                      | Role                                  |
+| --------------------------- | ------------------------------------- |
+| **Tufayel Ahmed**           | Team lead · main developer & designer |
+| **Annapurna Das Protyasha** | Researcher · concept maker            |
+| **Rakthim Deb Rudro**       | Advisor                               |
+| **Mir Shahi Ahmad**         | Data scientist                        |
+| **Tonusri Deb Diggi**       | Video & photo editor                  |
+
+All members are registered and listed on the Space Apps team page (limit six). The advisor
+contributes methodological review and is credited here; only registered participants count
+towards the team size.
 
 _Independent project. Not NASA software._

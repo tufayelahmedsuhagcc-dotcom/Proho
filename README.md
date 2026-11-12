@@ -195,10 +195,19 @@ _About → Privacy & attribution_. Repository contents were reviewed rather than
 provenance is hashed, the analysis engine is deterministic and unit-tested, and every executed
 test is recorded. No runtime AI service receives user readings.
 
-## Team
+## Team — Skorpe Monad
 
-Built for the 2026 NASA Space Apps Challenge, **The Next Frontier** theme.
-Team and contributors: see [SUBMISSION.md](SUBMISSION.md).
+_Five people. One working prototype. A clearer next step for crew health._
+
+| Member                      | Role                                  |
+| --------------------------- | ------------------------------------- |
+| **Tufayel Ahmed**           | Team lead · main developer & designer |
+| **Annapurna Das Protyasha** | Researcher · concept maker            |
+| **Rakthim Deb Rudro**       | Advisor                               |
+| **Mir Shahi Ahmad**         | Data scientist                        |
+| **Tonusri Deb Diggi**       | Video & photo editor                  |
+
+Built for the 2026 NASA Space Apps Challenge, _The Next Frontier_.
 
 ## Citation and contributing
 

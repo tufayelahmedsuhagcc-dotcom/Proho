@@ -2,6 +2,7 @@
   "name": "prohor-mission-health",
   "version": "3.0.0",
   "description": "PROHOR \u2014 an offline-capable, non-diagnostic mission health workspace for astronauts: personal baselines, traceable NASA evidence and a structured handover for human review.",
+  "author": "Skorpe Monad",
   "homepage": "https://prohor-rho.vercel.app",
   "repository": {
     "type": "git",

@@ -109,8 +109,9 @@ def build():
     c.setFillColor(TEAL)
     c.setFont("Helvetica", 10.5)
     c.drawString(398, 96, "github.com/tufayelahmedsuhagcc-dotcom/prohor")
-    note(c, 62, 74, "Challenge: Create Health Monitoring Software for Astronauts on Space Missions")
-    note(c, 62, 58, "Research prototype. Not a medical device. Independent project; no NASA endorsement implied.")
+    note(c, 62, 78, "Team: Skorpe Monad — Tufayel Ahmed · Annapurna Das Protyasha · Rakthim Deb Rudro · Mir Shahi Ahmad · Tonusri Deb Diggi")
+    note(c, 62, 62, "Challenge: Create Health Monitoring Software for Astronauts on Space Missions")
+    note(c, 62, 46, "Research prototype. Not a medical device. Independent project; no NASA endorsement implied.")
     c.showPage()
 
     # 2 — the moment -------------------------------------------------------
@@ -239,7 +240,7 @@ def build():
     c.setFillColor(TEAL)
     c.setFont("Helvetica", 11)
     c.drawString(150, 96, "github.com/tufayelahmedsuhagcc-dotcom/prohor")
-    note(c, 48, 66, "MIT licensed. Independent project. Not NASA software; no NASA endorsement implied.")
+    note(c, 48, 66, "Skorpe Monad · MIT licensed · Independent project, not NASA software, no NASA endorsement implied.")
     c.showPage()
     c.save()
     print("wrote", os.path.normpath(OUT))
