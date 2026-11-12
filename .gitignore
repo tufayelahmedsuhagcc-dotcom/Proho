@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build and test output that is regenerated locally
+coverage/
+.vite/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Test artefacts
+docs/test-results/
+test-results/
+playwright-report/
+*.log
+
+# NOTE: web/ is intentionally committed — it is the deployable offline build that lets a
+# reviewer inspect the app without installing Node.

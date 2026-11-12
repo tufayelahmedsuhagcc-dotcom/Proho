@@ -1,0 +1,61 @@
+{
+  "name": "prohor-mission-health",
+  "version": "3.0.0",
+  "description": "PROHOR \u2014 an offline-capable, non-diagnostic mission health workspace for astronauts: personal baselines, traceable NASA evidence and a structured handover for human review.",
+  "homepage": "https://prohor-rho.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufayelahmedsuhagcc-dotcom/Proho.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tufayelahmedsuhagcc-dotcom/Proho/issues"
+  },
+  "keywords": [
+    "nasa-space-apps",
+    "astronaut-health",
+    "human-research-program",
+    "react",
+    "typescript",
+    "offline-first",
+    "open-science",
+    "osdr"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "node server/dev.mjs",
+    "build": "tsc -b && vite build && node scripts/build-sw.mjs",
+    "start": "node server/start.mjs",
+    "preview": "node server/start.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b",
+    "format": "prettier --write src server api scripts/build-sw.mjs \"tests/*.test.ts\" vite.config.ts tsconfig.json package.json vercel.json index.html",
+    "format:check": "prettier --check src server api scripts/build-sw.mjs \"tests/*.test.ts\" vite.config.ts tsconfig.json package.json vercel.json index.html"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "papaparse": "^5.5.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "axe-core": "^4.11.0",
+    "prettier": "^3.10.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.4.1",
+    "vitest": "^4.1.12"
+  }
+}

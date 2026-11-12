@@ -1,0 +1,16 @@
+[
+  {
+    "file": "osd575-submitted.csv",
+    "source": "https://osdr.nasa.gov/geode-py/ws/studies/OSD-575/download?source=datamanager&file=LSDS-8_Comprehensive_Metabolic_Panel_CMP.upload_SUBMITTED.csv",
+    "retrievedAt": "2026-11-11T13:32:44.837230+00:00",
+    "sha256": "dab247eb794edab59aaaa683c85fd1f2dbf4ae3684872739338e10ead4192a0c",
+    "bytes": 25275
+  },
+  {
+    "file": "osd575-transformed.csv",
+    "source": "https://osdr.nasa.gov/geode-py/ws/studies/OSD-575/download?source=datamanager&file=LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv",
+    "retrievedAt": "2026-11-11T13:32:45.639085+00:00",
+    "sha256": "5eb1e7f025dd8443a9e70111e62bc32afae3432753024489c5c013e401d709d9",
+    "bytes": 8506
+  }
+]

@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+# NASA source bytes must stay byte-identical: the app verifies their SHA-256 on load.
+*.csv -text
+*.json -text

@@ -1,0 +1,2 @@
+# Browser tests only; the web application runs with Node/npm.
+playwright==1.65.0

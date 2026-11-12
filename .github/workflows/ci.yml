@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit and adapter tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: Verify the committed build matches a fresh build
+        run: |
+          test -f web/index.html
+          test -f web/sw.js
+          test -f web/data/osd575-submitted.csv
+          echo "prebuilt web/ is present and complete"
+
+      - name: Smoke the production server and the public-data API
+        run: |
+          OFFLINE=1 npm start & sleep 4
+          curl -fsS http://127.0.0.1:3000/ > /dev/null
+          curl -fsS "http://127.0.0.1:3000/api/feeds?feed=studies" | head -c 200
+          curl -fsS "http://127.0.0.1:3000/api/feeds?feed=space-weather" | head -c 200
+          kill %1
