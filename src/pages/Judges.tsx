@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { External, Notice, Panel, SectionHead } from "../components/UI";
 import { useProhor } from "../lib/context";
+import { ProjectVideo, SlideDeck } from "../components/Presentation";
 
 const PDF = "/docs/PROHOR_Judges_Brief.pdf";
 const REPO = "https://github.com/tufayelahmedsuhagcc-dotcom/prohor";
@@ -68,6 +69,25 @@ export function Judges() {
           </p>
         </div>
       </div>
+      <section className="judge-media" aria-labelledby="media-title">
+        <div className="media-heading">
+          <div>
+            <span className="eyebrow">WATCH THE PROJECT</span>
+            <h2 id="media-title">Two films. One mission.</h2>
+            <p>A concise pitch and a deeper walkthrough of the prototype.</p>
+          </div>
+        </div>
+        <div className="video-grid">
+          <ProjectVideo kind="short" />
+          <ProjectVideo kind="long" />
+        </div>
+        <p className="media-footnote">
+          The app footage shows the updated local build. The films use synthetic
+          demonstration readings; NASA study data are historical. Playback
+          requires a connection.
+        </p>
+      </section>
+      <SlideDeck />
       <section className="judge-brief-hero" aria-labelledby="brief-title">
         <div className="brief-icon" aria-hidden="true">
           <FileText size={26} />

@@ -9,6 +9,21 @@
 
 **Live prototype:** [prohor-rho.vercel.app](https://prohor-rho.vercel.app) · **Source:** [github.com/tufayelahmedsuhagcc-dotcom/prohor](https://github.com/tufayelahmedsuhagcc-dotcom/prohor) · **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) (2026 NASA Space Apps Challenge)
 
+### At a glance
+
+- **Who it is for:** a crew member on a long-duration mission with no clinic to walk into, and the
+  flight surgeon who later reads their handover.
+- **What it does:** records a measurement with its unit, compares it to that person's own
+  prior-day baseline, shows which rule fired and how much data backed it, and proposes one
+  routine step for a human to review — in the browser, and offline once loaded.
+- **Why explainable baselines:** a colour is not a decision. Every flag is reproducible from the
+  readings printed beside it — window, sample count, rule id, source rows. A workspace without
+  enough prior days says _insufficient prior data_ instead of showing green.
+- **Top limitations:** a research prototype, not a medical device — no diagnosis, no treatment, no
+  radiation-dose estimate, no fitness-for-duty call. The demo records are synthetic. The NASA
+  archive is four crew on one short flight and cannot supply thresholds. Local records sit in
+  **unencrypted** browser storage on one device.
+
 ![PROHOR mission overview](docs/screenshots/overview-desktop.png)
 
 ### In a hurry?
@@ -17,6 +32,8 @@
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — follow the _One reading. A clearer story_ guided steps                                                                                                                                                                                                                       |
 | **No click-through**        | [Judges' brief, 4 pages](public/docs/PROHOR_Judges_Brief.pdf) — or the in-app library: [mission](public/docs/PROHOR_01_Mission_and_Demo.pdf) · [data](public/docs/PROHOR_02_Data_and_Evidence.pdf) · [technology](public/docs/PROHOR_03_Technology_and_Method.pdf) · [safety](public/docs/PROHOR_04_Safety_Impact_and_Roadmap.pdf) |
+| **Watch 30 s**              | [The 30-second film](public/media/prohor-30-second.mp4) — real capture of this build, narrated and captioned; the same film plays in-app on the overview and judges' pages                                                                                                                                                         |
+| **One page, judged**        | [Seven-slide deck (PDF)](public/docs/PROHOR_Seven_Slide_Presentation.pdf) — the narrative without the app; slide images in `public/slides/`                                                                                                                                                                                        |
 | **2 minutes**               | [SUBMISSION.md](SUBMISSION.md) — what it is, how it maps to the judging criteria, and the demo path                                                                                                                                                                                                                                |
 | **5 minutes**               | [docs/METHODOLOGY.md](docs/METHODOLOGY.md) — the baseline rule, its floors, and what the numbers cannot mean                                                                                                                                                                                                                       |
 | **A technical review**      | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) → [docs/TEST-REPORT.md](docs/TEST-REPORT.md) → `npm test`                                                                                                                                                                                                                             |
@@ -41,8 +58,11 @@ PROHOR answers the four questions a crew actually has:
 
 ## What it does
 
-Twelve connected views. Nothing is a mock-up: every number below is computed in the browser
-from the file or entry it claims to come from.
+Eleven routed views (twelve panels with the expanded health atlas). Nothing is a mock-up in the
+sense that matters: every number is computed in the browser from the file or entry it claims to
+come from, with no hard-coded display values. The demo _records_ are synthetic and labelled so in
+the interface; the _arithmetic, parsing, hashing and feed handling_ are real code running on the real
+inputs named in each row.
 
 | View                    | Working behaviour                                                                                          |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -141,7 +161,7 @@ src/
   data/         Signal catalog, references, routine prompts, synthetic fixture
   components/   Anatomy, charts, accessible dialogs, entry form
   lib/          Persistence, workspace state, feed hook
-  pages/        Twelve workspace views
+  pages/        Eleven routed views (twelve panels with the expanded atlas)
 scripts/        Normalisation, offline-precache and PDF-dossier generators
 server/         Same-origin read-only public-data adapters and local servers
 api/feeds.mjs   Serverless entry point for Vercel
@@ -187,7 +207,7 @@ medical information.
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)                   | Local, static, Node and Vercel deployment; offline behaviour                                  |
 | [docs/TEST-REPORT.md](docs/TEST-REPORT.md)                 | Executed tests, scope and honest coverage gaps                                                |
 | [docs/SECURITY.md](docs/SECURITY.md)                       | Threat model, data handling, known limitations                                                |
-| [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)                 | 30-second video script and 7-slide deck outline                                               |
+| [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)                 | Live walkthrough, the recorded 30-second film, a re-record plan and the seven-slide deck      |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)               | Modules, data flow, trust boundaries, build pipeline                                          |
 | [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)             | Implemented affordances, measured contrast, unverified gaps                                   |
 | [docs/THIRD-PARTY-NOTICES.md](docs/THIRD-PARTY-NOTICES.md) | Library, font and dataset notices                                                             |

@@ -1,0 +1,1 @@
+We're team Skorpe Monad. This is PROHOR. On long missions, a change in an astronaut's health needs context. PROHOR compares simulated readings with personal baselines, and prepares a handover for human review. Separately, its research explorer visualizes NASA's OSD-575 Inspiration4 blood data. Offline after caching, it helps crews prepare a clearer story for review. PROHOR.

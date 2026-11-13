@@ -20,3 +20,9 @@ Edit `scripts/generate_judges_library.py`, install Python `reportlab`, then run 
 - [Twisters/SkySense project page](https://www.spaceappschallenge.org/2025/find-a-team/twisters/?tab=project) lists a demonstration, technologies, data sources and AI disclosure. Its linked website was unavailable at review time; the Space Apps project page was used.
 
 Prior winner examples are inspiration, not proof of current rules or a guarantee of an award.
+
+## Videos and seven-slide presentation
+
+The judges' page includes the recorded 30-second pitch (29.90 s, 1920×1080, mono narration, burned-in captions) and the 3:49.5 judging film, caption/transcript links, an interactive seven-slide overview, and a downloadable seven-page PDF (`public/docs/PROHOR_Seven_Slide_Presentation.pdf`). The overview page also features the short film. Video files in `public/media/` are streamed on demand and excluded from the offline service-worker cache to avoid downloading ~20 MB on installation; playback needs a network connection. Their existing captions are burned in, with downloadable transcripts and SRT files. PDF and presentation screenshots are cached after successful initial service-worker installation.
+
+The slide text is edited in `src/components/Presentation.tsx`. The PDF is generated separately by `scripts/generate_presentation.py` using ReportLab; when changing content, update and check both versions. App footage is from the updated local build, not evidence that the currently deployed website already includes it. Neither film has been uploaded to a video host and no public video URL has been added to any submission form — the files live in this repository, and publishing them is the owner's decision. The presentation and videos describe synthetic demonstration readings separately from historical NASA research.

@@ -13,7 +13,7 @@ screenshot. Nothing here is aspirational; every module named below exists in thi
   synthetic fixture ──▶│ data/demo.ts ────────▶ lib/context.tsx ── (workspace state) ──┐   │
   (888 records)        │                            ▲                                   │   │
                        │                            │                                   ▼   │
-  public/data/         │ compute/engine.ts ◀────────┴──────────────▶ pages/*  (11 views)     │
+  public/data/         │ compute/engine.ts ◀────────┴──────────────▶ pages/*  (11 routed views)│
   osd575.json  ───────▶│  RULE_VERSION PROHOR-IQR-3.0               components/*  (SVG atlas, │
   (531 observations)   │  quantile · getBaseline · assess            charts, dialogs)       │
                        └───────────────▲──────────────────────────────────────────────────┘
@@ -27,6 +27,64 @@ screenshot. Nothing here is aspirational; every module named below exists in thi
                           NASA OSDR (OSD-575/569/87)      NOAA SWPC (planetary Kp)
 ```
 
+## Four pathways, in plain text
+
+No diagram tooling is required to read this. The four pathways are four **separate data
+contexts**; the app never blends one into another, and neither should a reader.
+
+### A. Synthetic demo record or your own entry → baseline → rule → explanation
+
+1. `src/data/demo.ts` (synthetic, labelled TODAY / SYNTHETIC) or the entry form produce a
+   reading `{mode, crew, signal, value, unit, day}`.
+2. `src/lib/context.tsx` holds workspace state; readings persist through `src/lib/storage.ts`.
+3. `src/compute/engine.ts` takes the 30 distinct **prior** days for that `(mode, crew, signal)`,
+   computes median/IQR and coverage, applies `PROHOR-IQR-3.0`, and returns state, delta, window,
+   rule id and the source readings that fed it.
+4. The view prints the flag, the sample count, the rule sentence and those same source readings;
+   the care plan attaches one routine step. The explanation is the computation's own output, not
+   a second opinion generated afterwards.
+
+**Boundary:** the demo record is synthetic and the rest is self-entered. The arithmetic is real;
+the data behind it is not NASA's and not a patient's.
+
+### B. NASA OSDR OSD-575 → evidence view (research context, never your baseline)
+
+1. `public/data/osd575-submitted.csv` is the original download; `source-manifest.json` pins its
+   SHA-256 and byte length; `.gitattributes` keeps CSVs binary so line-ending translation cannot
+   break the hash.
+2. `src/compute/research.ts` parses without imputation — censored and non-numeric cells stay as
+   raw text next to their source row number.
+3. `src/pages/Evidence.tsx` re-hashes the file in the browser, compares it to the manifest, then
+   shows four coded subjects and their pre-flight recomputation.
+
+**Boundary:** 531 rows, four crew, one short flight. A hash match proves the bytes are the
+published bytes — it is not clinical validity, not representativeness, and not a threshold
+source. No value from this pathway enters a crew member's baseline.
+
+### C. NOAA Kp + OSDR study metadata → adapter → dated snapshot fallback
+
+1. The browser calls `/api/feeds?feed=…` with a relative URL and no credentials.
+2. `server/feeds.mjs` (or `api/feeds.mjs` on Vercel) allowlists `studies` and `space-weather`,
+   enforces a 9 s timeout, validates the payload shape, caches with a TTL, and preserves the
+   observation time on cache hits.
+3. On network or validation failure, `src/lib/feeds.ts` falls back to the dated snapshot under
+   `public/data/` and labels it as a snapshot; a shape failure surfaces an error rather than
+   substituted values.
+
+**Boundary:** planetary Kp is geomagnetic context. It is not radiation dose, not absorbed dose,
+and not an EVA or fitness-for-duty input. OSD-569/571 arrive as metadata only.
+
+### D. Your readings → localStorage (unencrypted, this device only)
+
+1. Writes are atomic: the full payload is validated and a partially invalid import is rejected.
+2. There is no encryption. Anyone with access to this browser profile or machine can read the
+   records. There is no account, no sync and no server copy.
+3. Export and erase are explicit — CSV/JSON download, confirmation before deletion. Handover
+   packets are generated locally and downloaded; nothing is transmitted.
+
+**Boundary:** do not type identifiable real medical records into a shared machine. "Local-first"
+is a privacy property of _where_ data goes, not a claim of secure clinical storage.
+
 ## Modules
 
 | Path                            | Responsibility                                                               | Deliberate constraint                                                                         |
@@ -38,7 +96,7 @@ screenshot. Nothing here is aspirational; every module named below exists in thi
 | `src/lib/context.tsx`           | Single workspace state, mode/profile/day isolation                           | Demo baselines are never inherited by a local workspace                                       |
 | `src/lib/feeds.ts`              | Hook that prefers `/api/feeds`, falls back to the dated file                 | Failed network ⇒ visible "snapshot" label, not silence                                        |
 | `src/components/BodyAtlas.tsx`  | Interactive anatomy + skeleton, 6 systems                                    | Schematic illustration with proxy labels; not imaging                                         |
-| `src/pages/*`                   | Ten view modules (eleven views including the expanded atlas panel)           | Each view owns its own limitation copy                                                        |
+| `src/pages/*`                   | Eleven routed view modules (twelve panels with the expanded health atlas)    | Each view owns its own limitation copy                                                        |
 | `server/feeds.mjs`              | Read-only same-origin adapters, allowlist, TTL cache                         | No auth, no writes, no proxying of arbitrary URLs                                             |
 
 ## The one calculation that matters
@@ -77,8 +135,10 @@ api/feeds.mjs     → same handler as a Vercel function
 python3 -m http.server --directory web            [static-only fallback]
 ```
 
-`web/` is committed on purpose: it lets a reviewer open the app without a toolchain, and CI
-asserts the committed build is present and that the server + both feeds answer.
+`web/` is committed on purpose: it lets a reviewer open the app without a toolchain. CI
+therefore does three things rather than trusting the folder: it rebuilds `web/` and fails if the
+result differs from the committed bytes, it smokes the built server plus both feed endpoints, and
+a separate job drives the committed build in headless Chromium against the offline snapshots.
 
 ## What is not here
 

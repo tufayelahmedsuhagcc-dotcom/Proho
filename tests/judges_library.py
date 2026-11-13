@@ -3,6 +3,8 @@ import os, zipfile
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 URL=os.getenv('PROHOR_URL','http://127.0.0.1:3000')
+OUT=Path(__file__).resolve().parents[1]/'docs/test-results'
+OUT.mkdir(parents=True,exist_ok=True)
 DOCS=[('Mission & demo','PROHOR_01_Mission_and_Demo.pdf'),('Data & evidence','PROHOR_02_Data_and_Evidence.pdf'),('Technology & method','PROHOR_03_Technology_and_Method.pdf'),('Safety, impact & roadmap','PROHOR_04_Safety_Impact_and_Roadmap.pdf')]
 with sync_playwright() as p:
  b=p.chromium.launch()
@@ -26,13 +28,13 @@ with sync_playwright() as p:
   assert not errors,errors
   print('PASS four PDFs, combined ZIP and layout',width,flush=True)
   if width==1440:
-   page.screenshot(path='/home/user/PROHOR_judges_library_desktop.png',full_page=True)
+   page.screenshot(path=str(OUT/'judges-library-desktop.png'),full_page=True)
    page.evaluate('navigator.serviceWorker.ready');page.wait_for_function('!!navigator.serviceWorker.controller')
    ctx.set_offline(True);page.reload(wait_until='domcontentloaded')
    for _,file in DOCS:
     result=page.evaluate("async path => {const r=await fetch(path);return [r.status,(await r.text()).slice(0,5)]}",'/docs/'+file)
     assert result==[200,'%PDF-'],(file,result)
    print('PASS all four PDFs after offline reload',flush=True)
-  if width==390:page.screenshot(path='/home/user/PROHOR_judges_library_mobile.png',full_page=True)
+  if width==390:page.screenshot(path=str(OUT/'judges-library-mobile.png'),full_page=True)
   ctx.close()
  b.close()
