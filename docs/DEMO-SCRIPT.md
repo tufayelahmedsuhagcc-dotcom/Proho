@@ -54,7 +54,7 @@ the "SYNTHETIC" and "research prototype" labels inside the frame.
 ## The seven-slide deck (primary artefact)
 
 [`public/docs/PROHOR_Seven_Slide_Presentation.pdf`](../public/docs/PROHOR_Seven_Slide_Presentation.pdf)
-— 7 slides, ~1.1 MB, readable without the app; slide images are in
+— 7 slides, 531 KB, readable without the app; slide images are in
 [`public/slides/`](../public/slides/) and render inside the judges' page. The deck is the primary
 artefact; the film is optional supporting material, and the judges' brief (4 pages) covers the same
 ground in text.
