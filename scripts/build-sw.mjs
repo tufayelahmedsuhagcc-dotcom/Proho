@@ -9,7 +9,11 @@ async function walk(dir) {
     )
   ).flat();
 }
-const files = (await walk("web")).filter((f) => !f.endsWith("/sw.js"));
+// Large videos are streamed on demand: pre-caching them makes first install slow
+// and may exhaust offline storage. The core app, posters and PDFs remain cached.
+const files = (await walk("web")).filter(
+  (f) => !f.endsWith("/sw.js") && !/\.(mp4|webm)$/i.test(f),
+);
 const precache = files.map((f) => "/" + f.slice(4));
 const digest = createHash("sha256");
 for (const f of files) digest.update(await readFile(f));
@@ -17,7 +21,7 @@ const name = "prohor-v3-" + digest.digest("hex").slice(0, 12);
 const code = `const CACHE=${JSON.stringify(name)},FILES=${JSON.stringify(precache)};
 self.addEventListener('install',e=>e.waitUntil((async()=>{await(await caches.open(CACHE)).addAll(FILES);await self.skipWaiting();})()));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const k of await caches.keys())if(k.startsWith('prohor-')&&k!==CACHE)await caches.delete(k);await self.clients.claim();})()));
-self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin||u.pathname.startsWith('/api/'))return;
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin||u.pathname.startsWith('/api/')||/\\.(mp4|webm)$/i.test(u.pathname))return;
  if(e.request.mode==='navigate'){e.respondWith((async()=>{try{const res=await fetch(e.request);if(res.ok)return res;}catch{}return (await caches.open(CACHE)).match('/index.html');})());return;}
  e.respondWith((async()=>{const c=await caches.open(CACHE);const hit=await c.match(e.request);if(hit)return hit;return fetch(e.request);})());});
 `;

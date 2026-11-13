@@ -1,0 +1,36 @@
+1
+00:00:00,250 --> 00:00:01,930
+We're team Skorpe Monad.
+
+2
+00:00:01,940 --> 00:00:03,520
+This is PROHOR.
+
+3
+00:00:03,560 --> 00:00:07,740
+On long missions, a change in an astronaut's
+health needs context.
+
+4
+00:00:07,740 --> 00:00:11,440
+PROHOR compares simulated readings with personal
+baselines,
+
+5
+00:00:11,540 --> 00:00:13,995
+and prepares a handover for human review.
+
+6
+00:00:13,995 --> 00:00:21,040
+Separately, its research explorer visualizes
+NASA's OSD-575 Inspiration4 blood data.
+
+7
+00:00:21,140 --> 00:00:25,480
+Offline after caching, it helps crews prepare a
+clearer story for review.
+
+8
+00:00:25,880 --> 00:00:26,650
+PROHOR.
+

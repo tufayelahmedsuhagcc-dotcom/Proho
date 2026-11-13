@@ -1,0 +1,283 @@
+1
+00:00:00,540 --> 00:00:03,200
+Far from Earth, a health reading changes.
+
+2
+00:00:03,720 --> 00:00:08,030
+Is it a warning, a passing fluctuation, or a
+sensor issue?
+
+3
+00:00:08,130 --> 00:00:12,830
+Our challenge: help astronauts understand their
+health on long missions,
+
+4
+00:00:12,900 --> 00:00:15,020
+when support may be delayed.
+
+5
+00:00:16,000 --> 00:00:21,960
+We built PROHOR: a research prototype that turns
+scattered readings into context,
+
+6
+00:00:21,960 --> 00:00:27,100
+compares them with personal history, and helps a
+human decide what to review next.
+
+7
+00:00:29,440 --> 00:00:31,460
+We are team Skorpe Monad.
+
+8
+00:00:31,460 --> 00:00:35,420
+Tufayel Ahmed, our team lead, main developer and
+designer.
+
+9
+00:00:35,420 --> 00:00:39,620
+Annapurna Das Protyasha, researcher and concept
+maker.
+
+10
+00:00:39,620 --> 00:00:42,388
+Rakthim Deb Rudro, advisor.
+
+11
+00:00:42,388 --> 00:00:45,210
+Mir Shahi Ahmod, data scientist.
+
+12
+00:00:45,340 --> 00:00:48,540
+And Tonusri Deb Diggi, video and photo editor.
+
+13
+00:00:52,073 --> 00:00:53,623
+The idea is simple.
+
+14
+00:00:53,783 --> 00:00:55,603
+First, gather readings.
+
+15
+00:00:55,613 --> 00:01:00,853
+Next, compare each reading with prior days,
+using a transparent personal baseline.
+
+16
+00:01:00,863 --> 00:01:04,293
+Then prepare a routine follow-up and a handover.
+
+17
+00:01:04,293 --> 00:01:07,663
+PROHOR gives context; it does not diagnose
+illness.
+
+18
+00:01:08,310 --> 00:01:10,090
+Here is one simulated example.
+
+19
+00:01:10,090 --> 00:01:15,295
+Today’s sleep is 5.6 hours; the person’s
+previous median is 7.4.
+
+20
+00:01:15,295 --> 00:01:20,350
+PROHOR uses the median and interquartile range
+of prior days to flag a change.
+
+21
+00:01:20,350 --> 00:01:24,800
+Its band is an unvalidated prototype rule, not a
+medical threshold.
+
+22
+00:01:25,340 --> 00:01:28,450
+The health atlas makes the information easier to
+explore.
+
+23
+00:01:29,210 --> 00:01:33,130
+Choose a body system to see its available
+indicators and context.
+
+24
+00:01:33,200 --> 00:01:35,625
+A color points to a reading that needs review,
+
+25
+00:01:35,625 --> 00:01:36,940
+or limited data.
+
+26
+00:01:36,950 --> 00:01:38,740
+It does not diagnose an organ.
+
+27
+00:01:39,300 --> 00:01:43,040
+PROHOR uses NASA’s Open Science Data Repository,
+
+28
+00:01:43,040 --> 00:01:46,970
+OSD-575, in its research explorer.
+
+29
+00:01:46,970 --> 00:01:51,950
+The Inspiration4 blood serum metabolic panel
+supplies real measurements behind these
+
+30
+00:01:51,950 --> 00:01:56,000
+charts, with original values, units, and source
+rows.
+
+31
+00:01:56,000 --> 00:01:59,880
+This is historical research, separate from our
+simulated crew,
+
+32
+00:01:59,920 --> 00:02:02,490
+and does not validate its sleep flags.
+
+33
+00:02:03,667 --> 00:02:07,777
+NOAA’s planetary Kp adds Earth geomagnetic
+context.
+
+34
+00:02:08,087 --> 00:02:09,727
+Cabin readings are separate.
+
+35
+00:02:09,767 --> 00:02:11,847
+Neither proves the cause of a health change,
+
+36
+00:02:11,847 --> 00:02:14,617
+or represents a crew member’s personal radiation
+dose.
+
+37
+00:02:15,200 --> 00:02:17,780
+Here is a real import in the prototype.
+
+38
+00:02:17,880 --> 00:02:21,800
+A sample CSV brings readings into the local
+browser.
+
+39
+00:02:21,840 --> 00:02:26,630
+Required fields and units are checked, and an
+invalid row rejects the import.
+
+40
+00:02:26,640 --> 00:02:30,800
+Local inputs remain separate from NASA research
+and the simulated mission.
+
+41
+00:02:31,370 --> 00:02:35,950
+After the first successful load and cache, the
+workspace can work offline.
+
+42
+00:02:35,960 --> 00:02:37,950
+We reloaded it without a network.
+
+43
+00:02:37,950 --> 00:02:41,470
+Records stay in the browser, with no hidden
+synchronization.
+
+44
+00:02:41,480 --> 00:02:45,160
+This browser storage is not a secure clinical
+record system.
+
+45
+00:02:46,043 --> 00:02:48,583
+A flag is a starting point, not a decision.
+
+46
+00:02:48,653 --> 00:02:52,903
+The care plan offers routine follow-up, such as
+protecting a sleep window.
+
+47
+00:02:52,913 --> 00:02:57,183
+A structured handover brings the reading and
+crew notes together for review.
+
+48
+00:02:57,183 --> 00:03:01,483
+It can be exported or printed; nothing is sent
+automatically.
+
+49
+00:03:02,077 --> 00:03:03,297
+Why does this matter?
+
+50
+00:03:03,307 --> 00:03:05,537
+Our goal is not to replace doctors.
+
+51
+00:03:05,537 --> 00:03:09,002
+It is to help a crew notice a change, understand
+the evidence,
+
+52
+00:03:09,002 --> 00:03:11,492
+and bring a clearer story to a human reviewer,
+
+53
+00:03:11,492 --> 00:03:13,917
+even when a connection is unavailable.
+
+54
+00:03:13,957 --> 00:03:18,812
+On longer missions, this transparent,
+offline-capable workflow could make information
+
+55
+00:03:18,812 --> 00:03:21,747
+easier to review when support is far away.
+
+56
+00:03:22,337 --> 00:03:24,577
+A number alone is not a story.
+
+57
+00:03:24,587 --> 00:03:27,757
+PROHOR brings the change, the person’s baseline,
+
+58
+00:03:27,797 --> 00:03:31,767
+and the evidence together, so a crew can prepare
+for human review,
+
+59
+00:03:31,767 --> 00:03:33,967
+even when a connection is unavailable.
+
+60
+00:03:34,127 --> 00:03:39,307
+Our next step is to test this research prototype
+with clinicians and mission operators.
+
+61
+00:03:39,407 --> 00:03:41,287
+It is not a medical device.
+
+62
+00:03:41,297 --> 00:03:43,587
+We are Skorpe Monad.
+
+63
+00:03:43,587 --> 00:03:46,957
+PROHOR: a quiet watch for a long journey.
+

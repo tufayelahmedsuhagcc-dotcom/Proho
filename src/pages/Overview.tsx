@@ -32,6 +32,7 @@ import {
   Empty,
 } from "../components/UI";
 import { BodyAtlas } from "../components/BodyAtlas";
+import { ProjectVideo } from "../components/Presentation";
 import { Sparkline, TrendChart } from "../components/Charts";
 import type { Signal } from "../types";
 const ICONS = { sleep: Moon, hr: Heart, spo2: Wind, temp: Thermometer };
@@ -381,6 +382,20 @@ export function Overview() {
           </span>
         </Panel>
       </div>
+      <section className="landing-film" aria-labelledby="landing-film-title">
+        <div className="landing-film-heading">
+          <span className="eyebrow">THE PROJECT IN 30 SECONDS</span>
+          <h2 id="landing-film-title">The mission, in a moment.</h2>
+          <p>
+            Meet the idea behind PROHOR, then explore the workspace yourself.
+          </p>
+        </div>
+        <ProjectVideo kind="short" compact />
+        <button className="text-button" onClick={() => c.setPage("judges")}>
+          Explore both videos and seven slides{" "}
+          <ArrowRight size={15} aria-hidden="true" />
+        </button>
+      </section>
       <div className="quiet-disclaimer">
         <ShieldCheck size={15} />
         <span>
