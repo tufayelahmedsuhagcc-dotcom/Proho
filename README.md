@@ -141,12 +141,12 @@ src/
   data/         Signal catalog, references, routine prompts, synthetic fixture
   components/   Anatomy, charts, accessible dialogs, entry form
   lib/          Persistence, workspace state, feed hook
-  pages/        Eleven workspace views
+  pages/        Twelve workspace views
+scripts/        Normalisation, offline-precache and PDF-dossier generators
 server/         Same-origin read-only public-data adapters and local servers
 api/feeds.mjs   Serverless entry point for Vercel
 public/data/    Original NASA bytes, hashes, normalised archive, dated snapshots
-public/docs/    The four-page judge brief served in-app
-scripts/        Reproducible normalisation and offline-precache generation
+public/docs/    Judge brief, four source-linked dossiers and their ZIP, served in-app
 tests/          Unit tests and executable browser workflows
 web/            Included production build
 docs/           Methodology, provenance, deployment, security, test report, screenshots
@@ -179,19 +179,20 @@ medical information.
 
 ## Documentation
 
-| Document                                                   | Contents                                                            |
-| ---------------------------------------------------------- | ------------------------------------------------------------------- |
-| [SUBMISSION.md](SUBMISSION.md)                             | Judging brief: what this is, how it maps to the criteria, demo path |
-| [docs/METHODOLOGY.md](docs/METHODOLOGY.md)                 | Baseline math, thresholds, units, direction rules, limitations      |
-| [docs/DATA-PROVENANCE.md](docs/DATA-PROVENANCE.md)         | Where every byte came from and how to refresh it                    |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)                   | Local, static, Node and Vercel deployment; offline behaviour        |
-| [docs/TEST-REPORT.md](docs/TEST-REPORT.md)                 | Executed tests, scope and honest coverage gaps                      |
-| [docs/SECURITY.md](docs/SECURITY.md)                       | Threat model, data handling, known limitations                      |
-| [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)                 | 30-second video script and 7-slide deck outline                     |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)               | Modules, data flow, trust boundaries, build pipeline                |
-| [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)             | Implemented affordances, measured contrast, unverified gaps         |
-| [docs/THIRD-PARTY-NOTICES.md](docs/THIRD-PARTY-NOTICES.md) | Library, font and dataset notices                                   |
-| [docs/JUDGES-RESOURCES.md](docs/JUDGES-RESOURCES.md)       | How the judge brief is built and regenerated                        |
+| Document                                                   | Contents                                                                                      |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [SUBMISSION.md](SUBMISSION.md)                             | Judging brief: what this is, how it maps to the criteria, demo path                           |
+| [docs/METHODOLOGY.md](docs/METHODOLOGY.md)                 | Baseline math, thresholds, units, direction rules, limitations                                |
+| [docs/DATA-PROVENANCE.md](docs/DATA-PROVENANCE.md)         | Where every byte came from and how to refresh it                                              |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)                   | Local, static, Node and Vercel deployment; offline behaviour                                  |
+| [docs/TEST-REPORT.md](docs/TEST-REPORT.md)                 | Executed tests, scope and honest coverage gaps                                                |
+| [docs/SECURITY.md](docs/SECURITY.md)                       | Threat model, data handling, known limitations                                                |
+| [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)                 | 30-second video script and 7-slide deck outline                                               |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)               | Modules, data flow, trust boundaries, build pipeline                                          |
+| [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)             | Implemented affordances, measured contrast, unverified gaps                                   |
+| [docs/THIRD-PARTY-NOTICES.md](docs/THIRD-PARTY-NOTICES.md) | Library, font and dataset notices                                                             |
+| [docs/JUDGES-RESOURCES.md](docs/JUDGES-RESOURCES.md)       | Judges' hub: brief, four dossiers, [ZIP](public/docs/PROHOR_Judges_Library.zip), regeneration |
+| [docs/demo/PROHOR-deck.pdf](docs/demo/PROHOR-deck.pdf)     | Seven-slide presentation, one page per demo step                                              |
 
 ## AI assistance
 
