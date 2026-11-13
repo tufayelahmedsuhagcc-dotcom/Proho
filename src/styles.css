@@ -4068,3 +4068,232 @@ html[data-motion="reduced"] *::after {
     print-color-adjust: exact;
   }
 }
+
+/* A compact, honest judge path: the cards navigate real views, never live telemetry. */
+.judge-path {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.9fr) minmax(0, 1.5fr);
+  gap: 28px;
+  padding: 23px 25px;
+  margin: 0 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(120deg, #ffffff 0%, #f1f8f4 100%);
+  box-shadow: var(--shadow-soft);
+}
+.judge-path-intro h2 {
+  margin: 9px 0 7px;
+  font-size: clamp(18px, 1.8vw, 23px);
+  letter-spacing: -0.04em;
+}
+.judge-path-intro p {
+  max-width: 510px;
+  margin: 0;
+  color: var(--body);
+  font-size: 11px;
+  line-height: 1.65;
+}
+.judge-path-steps {
+  display: grid;
+  gap: 0;
+  align-content: center;
+}
+.judge-path-step {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 53px;
+  padding: 8px 4px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+}
+.judge-path-step:last-child {
+  border-bottom: 0;
+}
+.judge-path-step:hover {
+  color: var(--mint);
+}
+.judge-step-number {
+  color: var(--mint);
+  font-size: 11px;
+  font-weight: 700;
+}
+.judge-path-step strong,
+.judge-path-step small {
+  display: block;
+}
+.judge-path-step strong {
+  font-size: 12px;
+}
+.judge-path-step small {
+  margin-top: 3px;
+  font-size: 10px;
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .judge-path {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  /* Previously this row grew to 369px on 320px displays. */
+  .context-controls {
+    flex-wrap: wrap;
+    min-width: 0;
+    width: 100%;
+  }
+  .context-controls label {
+    min-width: 0;
+  }
+  .context-controls select {
+    max-width: 110px;
+  }
+  .judge-path {
+    padding: 18px;
+  }
+  .judge-path-step {
+    min-height: 48px;
+  }
+  .mobile-menu,
+  .mobile-nav-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .text-button,
+  .external {
+    min-height: 44px;
+  }
+}
+@media (max-width: 480px) {
+  .mission-context {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .context-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 8px;
+  }
+  .context-controls label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .context-controls label:first-child > span {
+    display: inline;
+  }
+  .context-controls select {
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 16px 4px 0;
+  }
+  .context-controls input {
+    max-width: 100%;
+  }
+  .context-separator {
+    display: none;
+  }
+  .cache-status {
+    padding: 1px 0;
+  }
+}
+
+/* Judges' resource hub */
+.judge-resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #175c43;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.judge-brief-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #c9dfd2;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #eef7f0, #fbfdfb);
+}
+.brief-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  background: #d8eadf;
+  border-radius: 14px;
+  color: #175c43;
+}
+.judge-brief-hero h2 {
+  margin: 8px 0;
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: -0.03em;
+  color: #122b21;
+}
+.judge-brief-hero p {
+  color: #485d52;
+  max-width: 760px;
+  line-height: 1.6;
+}
+.brief-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0 12px;
+}
+.brief-actions a {
+  text-decoration: none;
+}
+.judge-brief-hero .small {
+  margin: 0;
+  font-size: 12px;
+}
+.judges-columns {
+  margin-bottom: 20px;
+}
+.judge-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  gap: 14px;
+  color: #43554b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.judge-list strong {
+  color: #205c43;
+}
+.judge-source-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+}
+@media (max-width: 540px) {
+  .judge-brief-hero {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 14px;
+  }
+  .brief-actions a {
+    justify-content: center;
+    width: 100%;
+  }
+}

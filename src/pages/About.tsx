@@ -214,6 +214,9 @@ export function About() {
           <External href="https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json">
             NOAA SWPC · planetary Kp source feed
           </External>
+          <External href="https://github.com/tufayelahmedsuhagcc-dotcom/prohor">
+            PROHOR source code, methods and tests
+          </External>
         </div>
         <a className="external" href="/licenses/THIRD-PARTY.txt" download>
           Download third-party notices · local fonts and libraries

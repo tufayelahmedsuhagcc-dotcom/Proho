@@ -1,6 +1,6 @@
 {
   "status": "cached",
-  "retrievedAt": "2026-11-11T13:38:14.142785+00:00",
+  "retrievedAt": "2026-11-13T07:28:10.605211+00:00",
   "sourceUrl": "https://osdr.nasa.gov/osdr/data/osd/meta/575",
   "data": [
     {
@@ -9,7 +9,7 @@
       "description": "The SpaceX Inspiration4 mission was a 3-day mission with four private astronauts to low Earth orbit that occurred in September 2021. The crew collected biospecimen samples before, during, and after flight. One of these biospecimen collections included whole blood collected via venipuncture, with serum extracted from blood using a serum separator tube (SST). Samples were collected pre-flight (L-92, L-44, L-3) and post-flight (R+1, R+45, R+82). Serum samples were submitted for immune and cardiovascular cytokine biomarker profiling panels at two different companies (Eve Technologies and Alamar), and to Quest Diagnostics for comprehensive metabolic panel testing. Data was used to measure changes in cytokines and metabolic measures during spaceflight. This study derives results from the Comprehensive Metabolic Panel and Multiplex assays, and the blood serum data in this study are related to other studies using data from the same experiment; OSD-569 (whole blood), OSD-570 (peripheral blood mononuclear cells), OSD-571 (plasma), OSD-572 (skin, oral, and nasal swabs),  OSD-573 (Dragon capsule samples), OSD-574 (skin biopsy), OSD-656 (urine), and OSD-630 (stool).",
       "organism": "Homo sapiens",
       "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-575",
-      "kind": "Human research \u00b7 analyzed CMP table"
+      "kind": "Human research · analyzed CMP table"
     },
     {
       "accession": "OSD-569",
@@ -17,7 +17,15 @@
       "description": "The SpaceX Inspiration4 mission was a 3-day mission with four private astronauts to low Earth orbit that occurred in September 2021. The crew collected biospecimen samples before, during, and after flight. One of these biospecimen collections included whole blood collected via venipuncture into PaxGene Blood RNA tubes (BD Biosciences, #762165), collected pre-flight (L-92, L-44, L-3) and post-flight (R+1, R+45, R+82, R+194). Total RNA was purified from each tube and mRNA was sequenced using the Oxford Nanopore Technologies direct RNA-sequencing kit on the PromethION. Data was used to generate differential gene expression profiles and annotate sites of m6A modification. Additionally, whole genome sequencing was performed on crew members at L-44 and R+45 and a clonal hematopoiesis panel was performed on a subset of 9 genes (DNMT3A, TET2, ASXL1, TP53, CHEK2, JAK2, SRSF2, SF3B1, PPM1D). For these, DNA was isolated from the pellet of a cfDNA blood collection tube (Streck, cat #230470) (L-44, L-3, R+1, R+45, R+82, R+194). Finally, whole blood collected in K2 EDTA tubes (BD Biosciences, cat# 367844) were submitted to Quest Diagnostics for a complete blood count at all ground timepoints (L-92, L-44, L-3, R+1, R+45, R+82, R+194).",
       "organism": "Homo sapiens",
       "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-569",
-      "kind": "Human research \u00b7 metadata only"
+      "kind": "Human research · metadata only"
+    },
+    {
+      "accession": "OSD-571",
+      "title": "SpaceX Inspiration4 Plasma Profiling: Proteomics, EVPs, Metabolomics, cfDNA Sequencing and cfRNA Sequencing",
+      "description": "The SpaceX Inspiration4 mission was a 3-day mission with four private astronauts to low Earth orbit that occurred in September 2021. The crew collected biospecimen samples before, during, and after flight. One of these biospecimens was plasma from venous blood, which was collected pre-flight (L-92, L-44, L-3) and post-flight (R+1, R+45, R+82). Plasma was collected via three methods: cell-free DNA blood collection tubes (cfDNA BCTs), cell processing tubes (CPTs) and via Ficoll separation from K2 EDTA tubes. Plasma from cfDNA BCTs was used to isolate cfDNA for sequencing. Plasma from CPTs was used for proteomics. Plasma from the K2 EDTA tubes was used for metabolomics and to isolate extracellular vesicles and particles (EVPs) for mass spectrometry. Differential protein and metabolite abundances were calculated pre vs post-flight to generate processed data files.",
+      "organism": "Homo sapiens",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-571",
+      "kind": "Human research · metadata only"
     },
     {
       "accession": "OSD-87",
@@ -25,7 +33,7 @@
       "description": "We report the findings of an animal experiment onboard STS-135 investigating the molecular aspects of the impact of spaceflight on retinal biology by performing differential gene expression profiling between mice flown onboard STS-135 and their ground control counterparts.",
       "organism": "Mus musculus",
       "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-87",
-      "kind": "Animal research \u00b7 metadata only"
+      "kind": "Animal research · metadata only"
     }
   ],
   "notice": "Bundled, real NASA metadata snapshot. Research studies are never used as personal diagnostic thresholds."

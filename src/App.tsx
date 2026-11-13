@@ -36,6 +36,7 @@ import { Replay } from "./pages/Replay";
 import { Handover } from "./pages/Handover";
 import { Settings } from "./pages/Settings";
 import { About } from "./pages/About";
+import { Judges } from "./pages/Judges";
 const NAV = [
   {
     title: "CREW WORKSPACE",
@@ -59,6 +60,7 @@ const NAV = [
     items: [
       ["replay", "Mission replay", Play],
       ["handover", "Crew handover", FileText],
+      ["judges", "Judges’ resources", BookOpen],
       ["settings", "Data & settings", Settings2],
     ],
   },
@@ -187,6 +189,7 @@ export default function App() {
     replay: <Replay />,
     handover: <Handover />,
     settings: <Settings />,
+    judges: <Judges />,
     about: <About />,
   };
   return (

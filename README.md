@@ -15,7 +15,8 @@
 
 | If you have                 | Start here                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — open it, press _Explore the mission replay_            |
+| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — follow the _One reading. A clearer story_ guided steps |
+| **No click-through**        | The [judges' brief, 4 pages](public/docs/PROHOR_Judges_Brief.pdf) — in-app under _Judges' resources_         |
 | **2 minutes**               | [SUBMISSION.md](SUBMISSION.md) — what it is, how it maps to the judging criteria, and the demo path          |
 | **5 minutes**               | [docs/METHODOLOGY.md](docs/METHODOLOGY.md) — the baseline rule, its floors, and what the numbers cannot mean |
 | **A technical review**      | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) → [docs/TEST-REPORT.md](docs/TEST-REPORT.md) → `npm test`       |
@@ -40,7 +41,7 @@ PROHOR answers the four questions a crew actually has:
 
 ## What it does
 
-Eleven connected views. Nothing is a mock-up: every number below is computed in the browser
+Twelve connected views. Nothing is a mock-up: every number below is computed in the browser
 from the file or entry it claims to come from.
 
 | View                    | Working behaviour                                                                                         |
@@ -56,6 +57,7 @@ from the file or entry it claims to come from.
 | **Crew handover**       | Review notes, text/JSON download, clipboard and print-to-PDF packet. No transmission                      |
 | **Data & settings**     | Atomic CSV import, validated JSON restore, backup, erased-data confirmation, reduced motion               |
 | **About & methodology** | Data boundaries, references, privacy, AI-assistance disclosure, scientific limitations                    |
+| **Judges' resources**   | Guided three-step tour, downloadable four-page brief, and links to provenance, method and tests           |
 
 ### The design decision that matters
 
@@ -111,7 +113,7 @@ to the bundled dated snapshots, which the interface labels as such.
 
 ```bash
 npm run typecheck    # TypeScript, strict
-npm test             # 127 unit + adapter tests
+npm test             # 128 unit + adapter tests
 npm run build        # production build
 npm run format:check # Prettier
 ```
@@ -143,6 +145,7 @@ src/
 server/         Same-origin read-only public-data adapters and local servers
 api/feeds.mjs   Serverless entry point for Vercel
 public/data/    Original NASA bytes, hashes, normalised archive, dated snapshots
+public/docs/    The four-page judge brief served in-app
 scripts/        Reproducible normalisation and offline-precache generation
 tests/          Unit tests and executable browser workflows
 web/            Included production build
@@ -154,8 +157,9 @@ docs/           Methodology, provenance, deployment, security, test report, scre
 - **NASA OSDR OSD-575** (SpaceX Inspiration4 blood serum metabolic panel) — downloaded, hashed,
   parsed in the browser, recomputed and cited with source row numbers. See
   [DATA-PROVENANCE.md](docs/DATA-PROVENANCE.md).
-- **NASA OSDR OSD-569** metadata for study context; animal metadata is kept separate from human
-  comparisons.
+- **NASA OSDR OSD-569 and OSD-571** metadata for study context, fetched through OSDR with a dated
+  offline snapshot. Metadata only: no values feed the metabolic-panel chart or a personal baseline.
+  Animal metadata (OSD-87) is kept separate from human comparisons.
 - **NOAA SWPC planetary K-index** — live, validated, time-stamped, with dated fallback.
 - **NASA Human Research Program** references for sleep, standard measures and the five hazards.
 
@@ -187,6 +191,7 @@ medical information.
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)               | Modules, data flow, trust boundaries, build pipeline                |
 | [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)             | Implemented affordances, measured contrast, unverified gaps         |
 | [docs/THIRD-PARTY-NOTICES.md](docs/THIRD-PARTY-NOTICES.md) | Library, font and dataset notices                                   |
+| [docs/JUDGES-RESOURCES.md](docs/JUDGES-RESOURCES.md)       | How the judge brief is built and regenerated                        |
 
 ## AI assistance
 

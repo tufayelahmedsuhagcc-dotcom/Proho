@@ -5,9 +5,25 @@ The full suite is reproducible with the commands in [the README](../README.md#ve
 Passing these scans is not formal accessibility certification and says nothing about clinical
 effectiveness.
 
+## Judges' resource update
+
+- `npm ci`, formatting, typecheck and production build passed; **128 unit tests** passed.
+- The brief was opened and downloaded at 320, 390 and 1440 px; the page and the PDF were both
+  available after the service worker took control.
+- Guided-tour navigation, 320/375/390 px layouts, local-record preservation and the OSD-571
+  metadata entry were exercised, and the existing end-to-end, hardening, route-sweep and API
+  suites were rerun.
+- The theme suite's browser and accessibility checks passed; the historical byte-identity
+  comparison against a previous artifact was skipped because that artifact is not in this
+  repository. No claim is made that the intentionally modified source files are byte-identical to
+  any earlier baseline.
+- Reproduce with `npm run build`, `npm start`, then `python tests/judges_resources.py` and
+  `python tests/judging_update.py`. These are software checks, not clinical validation or
+  accessibility certification.
+
 ## Summary
 
-**127 unit tests, 48 end-to-end checks, 36 hardening checks, 22 route/viewport observations and
+**128 unit tests, 48 end-to-end checks, 36 hardening checks, 22 route/viewport observations and
 34 theme-specific checks passed.** Eleven desktop and eleven mobile view scans plus seven
 dialog/menu state scans reported no violations in the configured axe rules. Formatting,
 TypeScript, production build and dependency audit were rerun on the final build. The
@@ -17,24 +33,24 @@ interface revision.
 
 ## Full suite summary
 
-| Check | Actual result |
-|---|---|
-| Clean dependency installation (`npm ci`) | Passed |
-| TypeScript (`npm run typecheck`) | Passed |
-| Formatting (`npm run format:check`) | Passed |
-| Production build | Passed; app generated in `web/` |
-| Automated unit/adapter tests | **127 passed, 0 failed**, five test files |
-| Main end-to-end workflow | **48 checks passed** |
-| Browser hardening, mobile accessibility and 320px layout | **36 checks passed** |
-| Desktop/mobile route sweep | **22 route/viewport checks**, no uncaught page errors or page-level horizontal overflow |
-| Accessibility | **Zero axe violations in 11 desktop + 11 mobile view scans** for the configured WCAG 2 A/AA and 2.1 AA rules |
-| API integration | Five method/path cases passed: 200, 200, 400, 405, 404 |
-| Public upstream fetch | NASA metadata and NOAA Kp each returned a real validated network response in the recorded fresh-process check |
-| Legacy deep routes | Six paths resolved to the expected view |
-| Development server | App rendered, API returned data, Vite HMR connected on the same port; zero uncaught page errors |
-| Static-only build | Python HTTP server, absent API, visible dated fallback, verified NASA CSV and true offline reload all passed |
-| Printable handover | One-page PDF generated; extracted text contains the entered context and rule version |
-| Dependency audit | **0 reported vulnerabilities** at the final check, including development dependencies |
+| Check                                                    | Actual result                                                                                                 |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Clean dependency installation (`npm ci`)                 | Passed                                                                                                        |
+| TypeScript (`npm run typecheck`)                         | Passed                                                                                                        |
+| Formatting (`npm run format:check`)                      | Passed                                                                                                        |
+| Production build                                         | Passed; app generated in `web/`                                                                               |
+| Automated unit/adapter tests                             | **127 passed, 0 failed**, five test files                                                                     |
+| Main end-to-end workflow                                 | **48 checks passed**                                                                                          |
+| Browser hardening, mobile accessibility and 320px layout | **36 checks passed**                                                                                          |
+| Desktop/mobile route sweep                               | **22 route/viewport checks**, no uncaught page errors or page-level horizontal overflow                       |
+| Accessibility                                            | **Zero axe violations in 11 desktop + 11 mobile view scans** for the configured WCAG 2 A/AA and 2.1 AA rules  |
+| API integration                                          | Five method/path cases passed: 200, 200, 400, 405, 404                                                        |
+| Public upstream fetch                                    | NASA metadata and NOAA Kp each returned a real validated network response in the recorded fresh-process check |
+| Legacy deep routes                                       | Six paths resolved to the expected view                                                                       |
+| Development server                                       | App rendered, API returned data, Vite HMR connected on the same port; zero uncaught page errors               |
+| Static-only build                                        | Python HTTP server, absent API, visible dated fallback, verified NASA CSV and true offline reload all passed  |
+| Printable handover                                       | One-page PDF generated; extracted text contains the entered context and rule version                          |
+| Dependency audit                                         | **0 reported vulnerabilities** at the final check, including development dependencies                         |
 
 Counts overlap intentionally: the 36 hardening checks include the eleven mobile axe scans and eleven 320px checks. Do not add every row as if each were a distinct test. The 84 browser workflow/hardening checks are 48 + 36; the separate route sweep adds route/viewport observations.
 

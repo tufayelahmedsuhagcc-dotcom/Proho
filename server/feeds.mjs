@@ -2,7 +2,9 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 const dataDir = new URL("../public/data/", import.meta.url);
 const cache = new Map();
-const studyIds = [575, 569, 87];
+// OSD-571 adds related human plasma study metadata only; no values are used
+// as personal telemetry or clinical thresholds. OSD-87 is animal metadata.
+const studyIds = [575, 569, 571, 87];
 export async function jsonFetch(url) {
   const response = await fetch(url, {
     signal: AbortSignal.timeout(9000),

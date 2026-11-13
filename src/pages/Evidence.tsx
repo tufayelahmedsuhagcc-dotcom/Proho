@@ -542,7 +542,9 @@ export function Evidence() {
               ? "Network response"
               : "Dated snapshot"}{" "}
           · retrieved {utc(feed.result?.retrievedAt)}. This is a curated
-          library, not a search of every NASA study.
+          library, not a search of every NASA study. OSD-569 and OSD-571 are
+          study metadata only; they are not part of the metabolic-panel chart or
+          a source of personal thresholds.
         </p>
         {feed.error && <Notice tone="warning">{feed.error}</Notice>}
         {feed.result?.notice && (

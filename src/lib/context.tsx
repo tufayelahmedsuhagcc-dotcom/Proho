@@ -27,7 +27,7 @@ interface Context {
   assessments: Assessment[];
   page: string;
   setPage: (p: string) => void;
-  setView: (v: Partial<Store["settings"]>) => void;
+  setView: (v: Partial<Store["settings"]>) => boolean;
   commit: (s: Store, allowRecovery?: boolean) => boolean;
   toast: (s: string) => void;
   message: string;
@@ -80,6 +80,7 @@ const routes = [
   "replay",
   "handover",
   "settings",
+  "judges",
   "about",
 ];
 function pageFromLocation() {
@@ -137,7 +138,7 @@ export function Provider({ children }: { children: ReactNode }) {
     }
   }
   const setView = (v: Partial<Store["settings"]>) => {
-    commit({ ...store, settings: { ...store.settings, ...v } });
+    return commit({ ...store, settings: { ...store.settings, ...v } });
   };
   useEffect(() => {
     const sync = (e: StorageEvent) => {

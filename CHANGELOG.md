@@ -2,6 +2,21 @@
 
 Notes describe the shipped application. Release dates are deliberately omitted; the git history is the timeline.
 
+## Judging polish update
+
+- Added a three-step synthetic judging walkthrough on Mission overview, with a guard that keeps
+  demo navigation from touching a local workspace whose storage warning is unresolved.
+- Added a **Judges' resources** view: guided tour, a four-page project brief as a bundled PDF
+  (open or download), and links to provenance, methodology and source.
+- Bundled brief is part of the service-worker precache, so it survives an offline reload.
+- Fixed a 320 CSS-pixel header overflow and raised several mobile touch targets to 44 px.
+- Added real NASA **OSD-571** plasma-study metadata to the curated library, with a refreshed dated
+  offline snapshot. Metadata only: no values reach the OSD-575 chart or a personal baseline.
+- Linked the public repository from About.
+- Regression coverage: `tests/feeds.test.ts` asserts the OSD-571 snapshot entry (128 unit tests),
+  and `tests/judges_resources.py` / `tests/judging_update.py` exercise the new view, the PDF
+  download and 320/375/390 px layouts.
+
 ## 3.0.0 — white-build release
 
 ### Interface

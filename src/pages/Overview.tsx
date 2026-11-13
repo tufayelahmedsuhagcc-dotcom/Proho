@@ -235,6 +235,70 @@ export function Overview() {
           <ArrowUpRight size={15} />
         </button>
       </div>
+      <section className="judge-path" aria-labelledby="judge-path-title">
+        <div className="judge-path-intro">
+          <span className="eyebrow">A QUICK GUIDED TOUR / SYNTHETIC DEMO</span>
+          <h2 id="judge-path-title">One reading. A clearer story.</h2>
+          <p>
+            Follow a simulated sleep change from personal baseline to NASA
+            research and a human-review handover. Selecting a step switches to
+            the demo view; your local entries remain on this device.
+          </p>
+          <button
+            className="judge-resource-link"
+            onClick={() => c.setPage("judges")}
+          >
+            Judges’ resources &amp; PDF{" "}
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </button>
+        </div>
+        <div className="judge-path-steps" aria-label="Guided demo steps">
+          {[
+            {
+              number: "01",
+              title: "See the change",
+              detail: "Sleep & personal baseline",
+              page: "trends",
+            },
+            {
+              number: "02",
+              title: "Explore the evidence",
+              detail: "NASA OSD-575 research",
+              page: "evidence",
+            },
+            {
+              number: "03",
+              title: "Prepare for review",
+              detail: "A handover for a human",
+              page: "handover",
+            },
+          ].map((step) => (
+            <button
+              key={step.number}
+              className="judge-path-step"
+              onClick={() => {
+                if (c.storageWarning) {
+                  c.toast(
+                    "Demo navigation is unavailable until the local storage warning is resolved in Data & settings.",
+                  );
+                  return;
+                }
+                if (!c.setView({ mode: "demo", crew: "CDR-01", day: 146 }))
+                  return;
+                c.select("neuro");
+                c.setPage(step.page);
+              }}
+            >
+              <span className="judge-step-number">{step.number}</span>
+              <span>
+                <strong>{step.title}</strong>
+                <small>{step.detail}</small>
+              </span>
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </button>
+          ))}
+        </div>
+      </section>
       <div className="summary-strip">
         <div>
           <span

@@ -45,6 +45,18 @@ describe("public data adapters", () => {
       expect(r.sourceUrl.startsWith("https://")).toBe(true);
     },
   );
+  it("includes real related plasma-study metadata in the offline snapshot", async () => {
+    const r = await getFeed("studies", true);
+    const plasma = r.data.find(
+      (s: { accession: string }) => s.accession === "OSD-571",
+    );
+    expect(plasma).toBeDefined();
+    expect(plasma.organism).toBe("Homo sapiens");
+    expect(plasma.kind).toContain("metadata only");
+    expect(plasma.url).toBe(
+      "https://osdr.nasa.gov/bio/repo/data/studies/OSD-571",
+    );
+  });
   it("rejects non-allowlisted feed names", async () => {
     await expect(getFeed("https://example.org", true)).rejects.toThrow();
   });

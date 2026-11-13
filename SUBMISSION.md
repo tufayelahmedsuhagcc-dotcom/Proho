@@ -15,6 +15,7 @@ Everything a judge needs, and the exact text to paste into the Space Apps projec
 | **Live prototype**    | https://prohor-rho.vercel.app                                                                                                                        |
 | **Source code**       | https://github.com/tufayelahmedsuhagcc-dotcom/prohor                                                                                                 |
 | **Demo video (30 s)** | _add link_                                                                                                                                           |
+| **Judges' brief**     | [public/docs/PROHOR_Judges_Brief.pdf](public/docs/PROHOR_Judges_Brief.pdf) — four pages, also in-app under _Judges' resources_                       |
 | **Slides (≤7)**       | [docs/demo/PROHOR-deck.pdf](docs/demo/PROHOR-deck.pdf) — _or export from the outline in [DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)_                       |
 | **Licence**           | MIT (OSI-approved, as required for judging)                                                                                                          |
 | **Team**              | Skorpe Monad — five members, see §7                                                                                                                  |
@@ -80,7 +81,7 @@ recomputed baseline and to a specific row of a NASA dataset that the user can in
 
 Use this exact order; each step is a real, working interaction.
 
-1. **Overview** — Demo mission, CDR-01, flight day 146: five indicators under review, each with its delta and baseline day count.
+1. **Overview** — the _One reading. A clearer story_ guided tour, or start directly in Demo mission, CDR-01, flight day 146: five indicators under review, each with its delta and baseline day count.
 2. **Health atlas** — select _Mind & recovery_: the panel states that sleep, mood and fatigue are check-ins, not brain measurements.
 3. **Trends & baselines** — open the same signal: prior-day median, IQR band, coverage, and the literal rule that fired.
 4. **NASA evidence** — pick glucose, then subject C001: original values, source row numbers, the recomputed pre-flight median of 80 mg/dL, and the shared interval caveat.
