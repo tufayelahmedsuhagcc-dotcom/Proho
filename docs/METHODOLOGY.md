@@ -44,20 +44,20 @@ The trend chart shades the **IQR (middle 50%)**, not the wider change band. Its 
 
 ### Signal definitions
 
-| Key | Canonical unit | Supported input bounds | Noise floor | Flag direction |
-|---|---|---:|---:|---|
-| `hr` | bpm | 20–250 | 7 | Both |
-| `hrv` | ms, RMSSD | 1–300 | 10 | Lower only |
-| `sleep` | hours | 0–24 | 1 | Lower only |
-| `spo2` | % | 50–100 | 2 | Lower only |
-| `temp` | °C | 30–45 | 0.5 | Both |
-| `systolic` | mmHg | 40–300 | 15 | Both |
-| `diastolic` | mmHg | 20–200 | 10 | Both |
-| `glucose` | mg/dL | 10–1000 | 15 | Both |
-| `mood` | integer 1–5 | 1–5 | 1 | Lower only |
-| `fatigue` | integer 1–5 | 1–5 | 1 | Higher only |
-| `exercise` | minutes | 0–480 | 25 | Lower only |
-| `co2` | mmHg | 0–20 | 0.6 | Higher only |
+| Key         | Canonical unit | Supported input bounds | Noise floor | Flag direction |
+| ----------- | -------------- | ---------------------: | ----------: | -------------- |
+| `hr`        | bpm            |                 20–250 |           7 | Both           |
+| `hrv`       | ms, RMSSD      |                  1–300 |          10 | Lower only     |
+| `sleep`     | hours          |                   0–24 |           1 | Lower only     |
+| `spo2`      | %              |                 50–100 |           2 | Lower only     |
+| `temp`      | °C             |                  30–45 |         0.5 | Both           |
+| `systolic`  | mmHg           |                 40–300 |          15 | Both           |
+| `diastolic` | mmHg           |                 20–200 |          10 | Both           |
+| `glucose`   | mg/dL          |                10–1000 |          15 | Both           |
+| `mood`      | integer 1–5    |                    1–5 |           1 | Lower only     |
+| `fatigue`   | integer 1–5    |                    1–5 |           1 | Higher only    |
+| `exercise`  | minutes        |                  0–480 |          25 | Lower only     |
+| `co2`       | mmHg           |                   0–20 |         0.6 | Higher only    |
 
 **Do not use these bounds as healthy ranges, emergency cutoffs, medical targets or spacecraft limits.** For one-sided rules, a change in the other direction is not flagged. No physiological quantity here should be interpreted without measurement context.
 
@@ -99,11 +99,11 @@ For a selected subject/analyte, compute the median of its finite pre-flight valu
 Reproducible glucose checks:
 
 | Subject | Pre-flight median | R+1 value | R+1 delta | R+45 value |
-|---|---:|---:|---:|---:|
-| C001 | 80 | 90 | +10 | 84 |
-| C002 | 72 | 83 | +11 | 44 |
-| C003 | 75 | 103 | +28 | 36 |
-| C004 | 83 | 97 | +14 | 43 |
+| ------- | ----------------: | --------: | --------: | ---------: |
+| C001    |                80 |        90 |       +10 |         84 |
+| C002    |                72 |        83 |       +11 |         44 |
+| C003    |                75 |       103 |       +28 |         36 |
+| C004    |                83 |        97 |       +14 |         43 |
 
 All values are mg/dL. See the source rows and executed unit tests; do not infer fasting state from the table. At R+45, three distinct subjects fall below their source laboratory intervals (65–99). The explorer computes this shared pattern when at least three distinct subjects depart on the same side. It is a **source/study-context review cue**, not a diagnosis, automatic data invalidation or proof of a spaceflight effect.
 

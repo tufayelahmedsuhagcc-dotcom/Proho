@@ -1,10 +1,17 @@
 # Judges' resource hub
 
-The Overview tour and navigation both lead to `#judges`, with a bundled PDF that can be opened or downloaded at `/docs/PROHOR_Judges_Brief.pdf`. A production build adds the PDF to the service-worker precache. Offline access requires an initial successful visit and functioning, retained browser storage.
+The Overview tour and navigation both lead to `#judges`. The hub includes a short overview brief and four separately downloadable, source-linked dossiers:
 
-## Editing the brief
+1. **Mission & demo** — challenge, walkthrough and team.
+2. **Data & evidence** — source inventory, OSD-575 calculations, NOAA context and limitations.
+3. **Technology & method** — architecture, baseline math, integration and reproducibility.
+4. **Safety, impact & roadmap** — privacy, limitations and proposed validation.
 
-Edit `scripts/generate_judges_brief.py`, install `reportlab` in Python, and run `python scripts/generate_judges_brief.py`, then `npm run build`. The generator uses DejaVu Sans at `/usr/share/fonts/truetype/dejavu/`; install it or adapt the font paths on another system. Review the result, links, source citations and AI disclosure before submission. The repository links in the PDF and hub point at `main`; changes are not reflected there until pushed to that branch.
+`public/docs/PROHOR_Judges_Library.zip` contains the four dossiers. A production build includes all PDFs and the ZIP in the service-worker precache. Offline access requires an initial successful visit and functioning, retained browser storage.
+
+## Editing and regenerating
+
+Edit `scripts/generate_judges_library.py`, install Python `reportlab`, then run `python scripts/generate_judges_library.py` and `npm run build`. The original brief is generated separately by `scripts/generate_judges_brief.py`. Both scripts use DejaVu Sans at `/usr/share/fonts/truetype/dejavu/`; install it or adapt the paths on another system. Review page layout, source citations, links and AI disclosure before submission. Repository links in the PDFs and hub point at `main`; changes will not appear there until pushed to that branch. `tests/judges_library.py` verifies individual downloads, the bundle, responsive layout and offline access.
 
 ## Inspiration (not a current judging requirement)
 

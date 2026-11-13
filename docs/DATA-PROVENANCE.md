@@ -2,15 +2,15 @@
 
 ## Source inventory
 
-| Source | What is used | What is not claimed |
-|---|---|---|
-| [NASA OSDR OSD-575](https://osdr.nasa.gov/bio/repo/data/studies/OSD-575) | Original submitted comprehensive metabolic panel; four coded Inspiration4 subjects; descriptive pre/post comparison | A clinical model, astronaut telemetry feed, validated long-duration threshold or fasting glucose classification |
-| [NASA OSDR OSD-569](https://osdr.nasa.gov/bio/repo/data/studies/OSD-569) | Human-study title, description and repository link | New CBC calculations or personal reference ranges |
-| [NASA OSDR OSD-87](https://osdr.nasa.gov/bio/repo/data/studies/OSD-87) | Optional mouse-study metadata, hidden from the library's default human filter | Human thresholds, personal measurements or evidence that a given user has an eye condition |
-| [NASA HRP hazards](https://www.nasa.gov/hrp/hazards/) | Five-hazard framing and contextual routine prompts | Endorsement or certification of the app |
-| [NASA Standard Measures](https://www.nasa.gov/reference/standard-measures/) | Rationale for consistent longitudinal measurement and context | Approval of developer-selected numerical change bands |
-| [NASA sleep risk](https://www.nasa.gov/reference/risk-from-inadequate-sleep-and-irregular-schedules/) | Sleep/schedule context and rest-routine prompts | A diagnostic instrument or personalized treatment |
-| [NOAA SWPC planetary Kp](https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json) | Public Earth geomagnetic observations, their observation times and retrieval times | Personal radiation exposure, cabin conditions, a forecast or EVA clearance |
+| Source                                                                                                | What is used                                                                                                        | What is not claimed                                                                                             |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| [NASA OSDR OSD-575](https://osdr.nasa.gov/bio/repo/data/studies/OSD-575)                              | Original submitted comprehensive metabolic panel; four coded Inspiration4 subjects; descriptive pre/post comparison | A clinical model, astronaut telemetry feed, validated long-duration threshold or fasting glucose classification |
+| [NASA OSDR OSD-569](https://osdr.nasa.gov/bio/repo/data/studies/OSD-569)                              | Human-study title, description and repository link                                                                  | New CBC calculations or personal reference ranges                                                               |
+| [NASA OSDR OSD-87](https://osdr.nasa.gov/bio/repo/data/studies/OSD-87)                                | Optional mouse-study metadata, hidden from the library's default human filter                                       | Human thresholds, personal measurements or evidence that a given user has an eye condition                      |
+| [NASA HRP hazards](https://www.nasa.gov/hrp/hazards/)                                                 | Five-hazard framing and contextual routine prompts                                                                  | Endorsement or certification of the app                                                                         |
+| [NASA Standard Measures](https://www.nasa.gov/reference/standard-measures/)                           | Rationale for consistent longitudinal measurement and context                                                       | Approval of developer-selected numerical change bands                                                           |
+| [NASA sleep risk](https://www.nasa.gov/reference/risk-from-inadequate-sleep-and-irregular-schedules/) | Sleep/schedule context and rest-routine prompts                                                                     | A diagnostic instrument or personalized treatment                                                               |
+| [NOAA SWPC planetary Kp](https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json)         | Public Earth geomagnetic observations, their observation times and retrieval times                                  | Personal radiation exposure, cabin conditions, a forecast or EVA clearance                                      |
 
 All sources were downloaded directly from the publishing agency. Exact downloadable-byte provenance is in `public/data/source-manifest.json`. NASA/NOAA availability can change; source failures are not replaced with generated observations.
 

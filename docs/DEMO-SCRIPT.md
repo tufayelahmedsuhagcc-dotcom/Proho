@@ -9,18 +9,18 @@ Two accepted demo formats: a **30-second video** or **up to 7 slides**. Both are
 Target: **30.0 s**, ~78 spoken words. Screen recording of the live deploy at 1440×900, cursor
 visible, no music louder than the voice, English (or burned-in English subtitles).
 
-| Time | On screen | Voiceover |
-|---|---|---|
-| 0:00–0:05 | Overview, CDR-01, flight day 146. Five flags visible. | "On a long mission, no one can walk into a clinic. This crew member has five readings to review — and no doctor nearby." |
-| 0:05–0:11 | Click *Trends & baselines* on sleep: median, IQR band, 30 prior days, rule line. | "PROHOR compares each reading only against that person's own prior days, and shows how much data supports the comparison." |
-| 0:11–0:18 | Hover the coverage figure; then open *NASA evidence*, choose glucose + C001, show source row numbers and the 80 mg/dL median. | "Every flag opens its evidence — here, the original Inspiration4 dataset, parsed in the browser and recomputed in front of you." |
-| 0:18–0:24 | Log a new reading → switches to *Local workspace* → "insufficient prior data" state. | "Log a new reading and it refuses to reassure you: two days of data is not a baseline." |
-| 0:24–0:30 | *Care plan* → done → *Crew handover* → export packet → logo. | "One conservative next step, and a handover the flight surgeon can actually read. PROHOR. Not a diagnosis — a clearer next question." |
+| Time      | On screen                                                                                                                     | Voiceover                                                                                                                             |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 0:00–0:05 | Overview, CDR-01, flight day 146. Five flags visible.                                                                         | "On a long mission, no one can walk into a clinic. This crew member has five readings to review — and no doctor nearby."              |
+| 0:05–0:11 | Click _Trends & baselines_ on sleep: median, IQR band, 30 prior days, rule line.                                              | "PROHOR compares each reading only against that person's own prior days, and shows how much data supports the comparison."            |
+| 0:11–0:18 | Hover the coverage figure; then open _NASA evidence_, choose glucose + C001, show source row numbers and the 80 mg/dL median. | "Every flag opens its evidence — here, the original Inspiration4 dataset, parsed in the browser and recomputed in front of you."      |
+| 0:18–0:24 | Log a new reading → switches to _Local workspace_ → "insufficient prior data" state.                                          | "Log a new reading and it refuses to reassure you: two days of data is not a baseline."                                               |
+| 0:24–0:30 | _Care plan_ → done → _Crew handover_ → export packet → logo.                                                                  | "One conservative next step, and a handover the flight surgeon can actually read. PROHOR. Not a diagnosis — a clearer next question." |
 
 **Recording checklist**
 
 - Record at 1440×900 or 1280×720, 30 fps; keep the browser chrome out of frame.
-- Pre-seed the *Local workspace* with a 2-day history so the insufficient-data state appears instantly.
+- Pre-seed the _Local workspace_ with a 2-day history so the insufficient-data state appears instantly.
 - Wait for **Offline ready** before recording — then the whole demo also works with Wi-Fi off,
   which is worth saying out loud if you have two spare seconds.
 - Export H.264 MP4, upload **public** to YouTube; verify in a private window.
@@ -33,7 +33,7 @@ visible, no music louder than the voice, English (or burned-in English subtitles
 
 **1 · Title**
 PROHOR — Mission Health Intelligence
-*Your readings. Your baseline. A clearer next step.*
+_Your readings. Your baseline. A clearer next step._
 Challenge · team · live link (as text, not a QR code only).
 
 **2 · The moment**
@@ -43,7 +43,7 @@ The gap: today's tools give a colour, not a reason.
 
 **3 · Why a colour fails**
 Three-line argument: a flag without its baseline, day count and rule is unfalsifiable; a score
-without its limits invites over-trust. What a crew member needs is a *traceable* comparison.
+without its limits invites over-trust. What a crew member needs is a _traceable_ comparison.
 
 **4 · What PROHOR does**
 Screenshot: trends + baseline panel.
@@ -59,6 +59,10 @@ numbers, recomputed medians, stated limits.
 Screenshot: care plan + handover packet.
 One conservative routine step → documented → exported for the flight surgeon. The packet, not the
 alert, is the product.
+
+**6b · Where to dig deeper**
+Judges' resources → four dossiers (mission, data, technology, safety) plus a single ZIP.
+"Everything you just saw, in writing, with sources."
 
 **7 · Boundaries and what's next**
 Not a medical device · no diagnosis or dose estimate · unencrypted single-user storage ·
@@ -77,3 +81,5 @@ Live link + repo link, large and legible.
 - [ ] The "consider for Global Judging" box is checked.
 - [ ] Every screenshot in the deck shows the current white build.
 - [ ] No NASA logo or NASA endorsement language anywhere.
+- [ ] Every PDF in `public/docs/` opens from the live link, not just from the repo.
+- [ ] The ZIP downloads and contains all four dossiers.

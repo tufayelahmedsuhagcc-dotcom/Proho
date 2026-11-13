@@ -10,7 +10,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-DEST = ROOT.parent / 'PROHOR-3.0-White-Theme-Full-Project.zip'
+DEST = ROOT.parent / 'PROHOR-Complete-Judges-Library-Website.zip'
 MANIFEST = ROOT / 'PROJECT-MANIFEST.json'
 SKIP_DIRS = {'.git', '.arena', '.cache', '.venv', '__pycache__', 'node_modules', '.vite', '.playwright-cli'}
 SKIP_NAMES = {'.env', '.git-credentials', '.netrc', 'PROJECT-MANIFEST.json'}
@@ -19,21 +19,24 @@ SKIP_NAMES = {'.env', '.git-credentials', '.netrc', 'PROJECT-MANIFEST.json'}
 def included(path):
     relative = path.relative_to(ROOT)
     return (path.is_file() and not any(part in SKIP_DIRS for part in relative.parts)
-            and path.name not in SKIP_NAMES and not path.name.endswith(('.tsbuildinfo', '.zip', '.pyc'))
+            and path.name not in SKIP_NAMES and not path.name.endswith(('.tsbuildinfo', '.pyc'))
+            and (path.suffix != '.zip' or str(relative) in {'public/docs/PROHOR_Judges_Library.zip', 'web/docs/PROHOR_Judges_Library.zip'})
             and not (path.name.startswith('.env.') and path.name != '.env.example'))
 
 
 files = sorted(path for path in ROOT.rglob('*') if included(path))
 required = ['package.json', 'package-lock.json', 'README.md', 'src/App.tsx',
             'server/start.mjs', 'server/feeds.mjs', 'web/index.html', 'web/sw.js',
-            'docs/TEST-REPORT.md', 'public/data/osd575-submitted.csv']
+            'docs/TEST-REPORT.md', 'public/data/osd575-submitted.csv',
+            'public/docs/PROHOR_Judges_Library.zip', 'web/docs/PROHOR_Judges_Library.zip',
+            'public/docs/PROHOR_01_Mission_and_Demo.pdf', 'src/pages/Judges.tsx']
 for name in required:
     if ROOT / name not in files:
         raise ValueError(f'Required delivery file missing: {name}')
 entries = [{'path': str(path.relative_to(ROOT)), 'bytes': path.stat().st_size,
             'sha256': hashlib.sha256(path.read_bytes()).hexdigest()} for path in files]
-manifest = {'project': 'PROHOR', 'version': '3.0.0', 'releaseDate': '2026-11-11',
-            'theme': 'white', 'edition': 'White-theme web-app revision',
+manifest = {'project': 'PROHOR', 'version': '3.0.0', 'releaseDate': '2026-11-12',
+            'theme': 'white', 'edition': 'Four-dossier judges library and website polish',
             'scope': 'Complete editable white-theme web application, production build, data, tests and review documentation.',
             'fileCountExcludingThisManifest': len(entries),
             'uncompressedBytesExcludingThisManifest': sum(e['bytes'] for e in entries), 'files': entries}

@@ -94,19 +94,19 @@ to carry readings across.
 
 ## Troubleshooting
 
-| Symptom | Check |
-|---|---|
-| `npm` missing | Install a supported Node.js version, reopen the terminal |
-| Blank page from downloaded file | Use an HTTP server, not double-click/file URLs |
-| Port already used | Stop the conflicting process or set `PORT` |
-| No offline-ready badge | Use production build and HTTPS/localhost; wait for installation; check browser storage/service-worker restrictions |
-| Cached environment data | Read observed/retrieved timestamps; source may be stale, unavailable, rate-limited or the deployment may be static-only |
-| Local storage unavailable/full | No save is claimed. Export existing data; use a browser/origin with available persistent storage |
-| Saved data cannot be read | Saving is blocked to protect the original value. Use Settings to export it, then restore a validated backup or explicitly erase |
-| Archive checksum mismatch | Stop analysis; restore source bytes from the verified package/source. Do not bypass the check |
-| No local baseline | At least seven distinct prior days, same signal and local profile, are needed; demo data is never borrowed |
-| Old app after updating | Reconnect, reload and allow the new service worker to install; do not clear local records unnecessarily |
-| Copy button denied | Use Download report; browser clipboard permissions are optional |
+| Symptom                         | Check                                                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `npm` missing                   | Install a supported Node.js version, reopen the terminal                                                                        |
+| Blank page from downloaded file | Use an HTTP server, not double-click/file URLs                                                                                  |
+| Port already used               | Stop the conflicting process or set `PORT`                                                                                      |
+| No offline-ready badge          | Use production build and HTTPS/localhost; wait for installation; check browser storage/service-worker restrictions              |
+| Cached environment data         | Read observed/retrieved timestamps; source may be stale, unavailable, rate-limited or the deployment may be static-only         |
+| Local storage unavailable/full  | No save is claimed. Export existing data; use a browser/origin with available persistent storage                                |
+| Saved data cannot be read       | Saving is blocked to protect the original value. Use Settings to export it, then restore a validated backup or explicitly erase |
+| Archive checksum mismatch       | Stop analysis; restore source bytes from the verified package/source. Do not bypass the check                                   |
+| No local baseline               | At least seven distinct prior days, same signal and local profile, are needed; demo data is never borrowed                      |
+| Old app after updating          | Reconnect, reload and allow the new service worker to install; do not clear local records unnecessarily                         |
+| Copy button denied              | Use Download report; browser clipboard permissions are optional                                                                 |
 
 ## Verification commands
 

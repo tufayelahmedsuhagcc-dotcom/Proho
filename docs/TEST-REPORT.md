@@ -5,6 +5,14 @@ The full suite is reproducible with the commands in [the README](../README.md#ve
 Passing these scans is not formal accessibility certification and says nothing about clinical
 effectiveness.
 
+## Judges' library revision
+
+- Each of the four dossiers downloaded successfully at 320, 375, 390, 768 and 1440 px; the ZIP was
+  checked to contain all four files and pass an integrity check; every document stayed available
+  after a cached offline reload.
+- `tests/judges_library.py` reproduces these checks. `tests/browser_sweep.py` now includes the
+  `judges` route in both the desktop axe sweep and the 390 px overflow sweep.
+
 ## Judges' resource update
 
 - `npm ci`, formatting, typecheck and production build passed; **128 unit tests** passed.

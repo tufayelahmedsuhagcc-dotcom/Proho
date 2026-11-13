@@ -13,6 +13,9 @@ Notes describe the shipped application. Release dates are deliberately omitted; 
 - Added real NASA **OSD-571** plasma-study metadata to the curated library, with a refreshed dated
   offline snapshot. Metadata only: no values reach the OSD-575 chart or a personal baseline.
 - Linked the public repository from About.
+- Added a judges' library alongside the brief: four separate three-page dossiers (mission & demo,
+  data & evidence, technology & method, safety/impact/roadmap), each openable and downloadable,
+  plus a single ZIP. All five documents and the ZIP are precached for offline use.
 - Regression coverage: `tests/feeds.test.ts` asserts the OSD-571 snapshot entry (128 unit tests),
   and `tests/judges_resources.py` / `tests/judging_update.py` exercise the new view, the PDF
   download and 320/375/390 px layouts.

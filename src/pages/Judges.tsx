@@ -1,9 +1,56 @@
-import { ArrowRight, ArrowUpRight, Download, FileText } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Download,
+  FileText,
+  Database,
+  Code2,
+  ShieldCheck,
+  Compass,
+} from "lucide-react";
 import { External, Notice, Panel, SectionHead } from "../components/UI";
 import { useProhor } from "../lib/context";
 
 const PDF = "/docs/PROHOR_Judges_Brief.pdf";
 const REPO = "https://github.com/tufayelahmedsuhagcc-dotcom/prohor";
+const LIBRARY = [
+  {
+    number: "01",
+    title: "Mission & demo",
+    label: "THE STORY",
+    description:
+      "The problem, the working walkthrough, the team and what a judge can verify.",
+    file: "PROHOR_01_Mission_and_Demo.pdf",
+    icon: Compass,
+  },
+  {
+    number: "02",
+    title: "Data & evidence",
+    label: "THE SOURCES",
+    description:
+      "NASA OSD-575, a reproducible glucose comparison, NOAA context and interpretation limits.",
+    file: "PROHOR_02_Data_and_Evidence.pdf",
+    icon: Database,
+  },
+  {
+    number: "03",
+    title: "Technology & method",
+    label: "THE BUILD",
+    description:
+      "Architecture, integrations, the baseline rule, data quality and reproduction steps.",
+    file: "PROHOR_03_Technology_and_Method.pdf",
+    icon: Code2,
+  },
+  {
+    number: "04",
+    title: "Safety, impact & roadmap",
+    label: "THE RESPONSIBILITY",
+    description:
+      "Privacy, honest boundaries, potential impact and the research needed before real use.",
+    file: "PROHOR_04_Safety_Impact_and_Roadmap.pdf",
+    icon: ShieldCheck,
+  },
+];
 
 export function Judges() {
   const c = useProhor();
@@ -56,6 +103,66 @@ export function Judges() {
             Available offline after a successful cache
           </p>
         </div>
+      </section>
+      <section className="judge-library" aria-labelledby="library-title">
+        <div className="judge-library-heading">
+          <div>
+            <span className="eyebrow">
+              FOUR DEEP DIVES / ONE COMPLETE PICTURE
+            </span>
+            <h2 id="library-title">Explore the judges’ library.</h2>
+            <p>
+              Choose the question you want to explore. Each dossier is a
+              separate, source-linked PDF.
+            </p>
+          </div>
+          <a
+            className="button secondary library-download-all"
+            href="/docs/PROHOR_Judges_Library.zip"
+            download
+          >
+            <Download size={16} aria-hidden="true" /> Download all four
+          </a>
+        </div>
+        <div className="judge-library-grid">
+          {LIBRARY.map(
+            ({ number, title, label, description, file, icon: Icon }) => (
+              <article className="dossier-card" key={file}>
+                <div className="dossier-topline">
+                  <span className="dossier-icon">
+                    <Icon size={20} aria-hidden="true" />
+                  </span>
+                  <span className="dossier-number">{number}</span>
+                </div>
+                <span className="eyebrow">{label} / 3 PAGES</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <div className="dossier-actions">
+                  <a
+                    href={`/docs/${file}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${title} PDF in a new tab`}
+                  >
+                    Open PDF <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
+                  <a
+                    href={`/docs/${file}`}
+                    download
+                    aria-label={`Download ${title} PDF`}
+                  >
+                    <Download size={14} aria-hidden="true" /> Download
+                  </a>
+                </div>
+              </article>
+            ),
+          )}
+        </div>
+        <p className="library-note">
+          Use the project brief for the overview, then explore the individual
+          dossiers for deeper evidence. Cached PDFs can be accessed offline
+          after a successful initial visit.
+        </p>
       </section>
       <div className="two-columns judges-columns">
         <Panel>

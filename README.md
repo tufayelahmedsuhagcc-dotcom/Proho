@@ -13,14 +13,14 @@
 
 ### In a hurry?
 
-| If you have                 | Start here                                                                                                   |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — follow the _One reading. A clearer story_ guided steps |
-| **No click-through**        | The [judges' brief, 4 pages](public/docs/PROHOR_Judges_Brief.pdf) — in-app under _Judges' resources_         |
-| **2 minutes**               | [SUBMISSION.md](SUBMISSION.md) — what it is, how it maps to the judging criteria, and the demo path          |
-| **5 minutes**               | [docs/METHODOLOGY.md](docs/METHODOLOGY.md) — the baseline rule, its floors, and what the numbers cannot mean |
-| **A technical review**      | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) → [docs/TEST-REPORT.md](docs/TEST-REPORT.md) → `npm test`       |
-| **An accessibility review** | [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md) — what was measured, and what was not                         |
+| If you have                 | Start here                                                                                                                                                                                                                                                                                                                         |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — follow the _One reading. A clearer story_ guided steps                                                                                                                                                                                                                       |
+| **No click-through**        | [Judges' brief, 4 pages](public/docs/PROHOR_Judges_Brief.pdf) — or the in-app library: [mission](public/docs/PROHOR_01_Mission_and_Demo.pdf) · [data](public/docs/PROHOR_02_Data_and_Evidence.pdf) · [technology](public/docs/PROHOR_03_Technology_and_Method.pdf) · [safety](public/docs/PROHOR_04_Safety_Impact_and_Roadmap.pdf) |
+| **2 minutes**               | [SUBMISSION.md](SUBMISSION.md) — what it is, how it maps to the judging criteria, and the demo path                                                                                                                                                                                                                                |
+| **5 minutes**               | [docs/METHODOLOGY.md](docs/METHODOLOGY.md) — the baseline rule, its floors, and what the numbers cannot mean                                                                                                                                                                                                                       |
+| **A technical review**      | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) → [docs/TEST-REPORT.md](docs/TEST-REPORT.md) → `npm test`                                                                                                                                                                                                                             |
+| **An accessibility review** | [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md) — what was measured, and what was not                                                                                                                                                                                                                                               |
 
 ---
 
@@ -44,20 +44,20 @@ PROHOR answers the four questions a crew actually has:
 Twelve connected views. Nothing is a mock-up: every number below is computed in the browser
 from the file or entry it claims to come from.
 
-| View                    | Working behaviour                                                                                         |
-| ----------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Mission overview**    | Day- and profile-specific calculations, missingness, sparklines, and one contextual next step             |
-| **Health atlas**        | Interactive SVG anatomy and skeleton; six body systems, keyboard selection, explicit proxy limits         |
-| **Logbook**             | Validated entry, optional daily check-in, unit preservation, filters, pagination, deletion, CSV export    |
-| **Trends & baselines**  | Prior-day median/IQR, rule direction, coverage, source readings, and table alternatives to every chart    |
-| **Care plan**           | Routine prompts tied to the flagged system; done/deferred state persisted per crew, day and mode          |
-| **NASA evidence**       | The original OSD-575 CSV parsed in-browser, SHA-256 verified, four-subject comparison, source row numbers |
-| **Space environment**   | Live NOAA planetary Kp feed with observation and retrieval times; cabin CO₂ stays a separate input        |
-| **Mission replay**      | Deterministic six-day scenario with play/pause/reset — labelled simulation, never "live telemetry"        |
-| **Crew handover**       | Review notes, text/JSON download, clipboard and print-to-PDF packet. No transmission                      |
-| **Data & settings**     | Atomic CSV import, validated JSON restore, backup, erased-data confirmation, reduced motion               |
-| **About & methodology** | Data boundaries, references, privacy, AI-assistance disclosure, scientific limitations                    |
-| **Judges' resources**   | Guided three-step tour, downloadable four-page brief, and links to provenance, method and tests           |
+| View                    | Working behaviour                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Mission overview**    | Day- and profile-specific calculations, missingness, sparklines, and one contextual next step              |
+| **Health atlas**        | Interactive SVG anatomy and skeleton; six body systems, keyboard selection, explicit proxy limits          |
+| **Logbook**             | Validated entry, optional daily check-in, unit preservation, filters, pagination, deletion, CSV export     |
+| **Trends & baselines**  | Prior-day median/IQR, rule direction, coverage, source readings, and table alternatives to every chart     |
+| **Care plan**           | Routine prompts tied to the flagged system; done/deferred state persisted per crew, day and mode           |
+| **NASA evidence**       | The original OSD-575 CSV parsed in-browser, SHA-256 verified, four-subject comparison, source row numbers  |
+| **Space environment**   | Live NOAA planetary Kp feed with observation and retrieval times; cabin CO₂ stays a separate input         |
+| **Mission replay**      | Deterministic six-day scenario with play/pause/reset — labelled simulation, never "live telemetry"         |
+| **Crew handover**       | Review notes, text/JSON download, clipboard and print-to-PDF packet. No transmission                       |
+| **Data & settings**     | Atomic CSV import, validated JSON restore, backup, erased-data confirmation, reduced motion                |
+| **About & methodology** | Data boundaries, references, privacy, AI-assistance disclosure, scientific limitations                     |
+| **Judges' resources**   | Guided three-step tour, a four-page brief and four source-linked dossiers (open, download or take the ZIP) |
 
 ### The design decision that matters
 

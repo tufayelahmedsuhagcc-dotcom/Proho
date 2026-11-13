@@ -4297,3 +4297,128 @@ html[data-motion="reduced"] *::after {
     width: 100%;
   }
 }
+
+/* Judges' library: a readable, touch-friendly source hub */
+.judge-library {
+  margin: 44px 0 28px;
+}
+.judge-library-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+.judge-library-heading h2 {
+  font-size: clamp(23px, 2.2vw, 31px);
+  line-height: 1.2;
+  margin: 8px 0;
+  letter-spacing: -0.035em;
+  color: #172f24;
+}
+.judge-library-heading p {
+  margin: 0;
+  color: #566b60;
+  line-height: 1.6;
+}
+.library-download-all {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.judge-library-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.dossier-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #d9e6dc;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(22, 60, 40, 0.035);
+}
+.dossier-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.dossier-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #176147;
+  background: #ebf5ed;
+  border-radius: 10px;
+}
+.dossier-number {
+  color: #536d5d;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.dossier-card h3 {
+  margin: 9px 0 9px;
+  color: #19372a;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.dossier-card p {
+  color: #576b5f;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 23px;
+}
+.dossier-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #e3ece5;
+}
+.dossier-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 32px;
+  color: #116345;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.dossier-actions a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.library-note {
+  font-size: 12px;
+  color: #607369;
+  line-height: 1.55;
+  margin: 16px 2px 0;
+}
+@media (max-width: 1100px) {
+  .judge-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 540px) {
+  .judge-library-heading {
+    display: block;
+  }
+  .library-download-all {
+    margin-top: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  .judge-library-grid {
+    grid-template-columns: 1fr;
+  }
+  .dossier-card {
+    padding: 20px;
+  }
+}

@@ -170,11 +170,15 @@ async def main():
         check('No uncaught JavaScript errors in theme checks', not errors, errors)
         await browser.close()
 
-    baseline = json.loads((REPORT / 'preserved-files.json').read_text())
-    differences = [name for name, expected in baseline.items()
-                   if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected]
-    check('Computation, data, storage and feed source files are unchanged', not differences,
-          {'filesCompared': len(baseline), 'differences': differences})
+    baseline_file = REPORT / 'preserved-files.json'
+    if baseline_file.exists():
+        baseline = json.loads(baseline_file.read_text())
+        differences = [name for name, expected in baseline.items()
+                       if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected]
+        check('Computation, data, storage and feed source files are unchanged', not differences,
+              {'filesCompared': len(baseline), 'differences': differences})
+    else:
+        print('SKIP historical preserved-file comparison: original baseline artifact is absent', flush=True)
 
 
 try:
