@@ -5,6 +5,40 @@ The full suite is reproducible with the commands in [the README](../README.md#ve
 Passing these scans is not formal accessibility certification and says nothing about clinical
 effectiveness.
 
+## 2026-11-12 · review branch `review/2026-11-12-hardening` (from `7f14346`)
+
+Environment: Linux container, Node v20.20.2, npm 10.8.2, Python 3.13.18, no root. Recording the
+exact environment matters: a passing result here is not a claim about your machine or about CI.
+
+**Executed and passed in that environment**
+
+| Command                                                   | Result                                                                                                                                                                                 |
+| --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm ci`                                                  | Clean install from `package-lock.json`                                                                                                                                                 |
+| `npm run format:check`                                    | "All matched files use Prettier code style!"                                                                                                                                           |
+| `npm run typecheck`                                       | `tsc -b`, no output                                                                                                                                                                    |
+| `npm test`                                                | **128 tests, 5 files** (engine 61, storage 24, hardening 21, research 11, feeds 11) — 1.5 s                                                                                            |
+| `npm run build`                                           | `vite build` OK; offline precache **47 files**, cache `prohor-v3-d5fe81f03b7b`                                                                                                         |
+| `OFFLINE=1 npm start` + `curl`                            | `/`, `/sw.js`, `/api/feeds?feed=studies`, `/api/feeds?feed=space-weather`, `/media/prohor-30-second.mp4`, `/docs/PROHOR_Seven_Slide_Presentation.pdf`, `/slides/atlas.jpg` all **200** |
+| `python -c "ast.parse"` over `tests/*.py`, `scripts/*.py` | All parse                                                                                                                                                                              |
+| `ffprobe` on both films                                   | 29.90 s / 1920×1080 / H.264 / mono AAC and 3:49.5 s / 1920×1080                                                                                                                        |
+| `yaml.safe_load` on `.github/workflows/ci.yml`            | Valid YAML                                                                                                                                                                             |
+
+**Not executed in that environment**
+
+- **Every Playwright suite** (`tests/e2e.py`, `browser_hardening.py`, `browser_sweep.py`,
+  `judges_resources.py`, `judges_library.py`, `presentation.py`, `theme_checks.py`): Chromium cannot
+  launch here (`libnspr4.so` missing, no root to install it). No browser result is claimed for this
+  revision. CI now carries a `browser-smoke` job that runs them against `OFFLINE=1` snapshots, and a
+  manual `accessibility` job for the axe sweep.
+- **Live-network feed integration** against NOAA/OSDR: the checks above were run in `OFFLINE=1`
+  mode against the dated snapshots. A live fetch was not exercised.
+- **Any real assistive-technology session** and any cross-browser run.
+
+So: unit, type, format, build, static-server, offline-api and media-asset checks are green for this
+revision; browser and live-network checks are pending CI. Software tests say nothing about clinical
+validity or accessibility conformance.
+
 ## Judges' library revision
 
 - Each of the four dossiers downloaded successfully at 320, 375, 390, 768 and 1440 px; the ZIP was

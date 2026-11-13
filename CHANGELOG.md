@@ -2,6 +2,20 @@
 
 Notes describe the shipped application. Release dates are deliberately omitted; the git history is the timeline.
 
+## Unreleased — media, deck and CI hardening
+
+- Recorded 30-second film and 3:49.5 judging film added under `public/media/` with SRT captions,
+  plain-text transcripts and poster frames; both stream in the overview and judges' views and are
+  excluded from the offline precache.
+- Seven-slide presentation PDF (`public/docs/PROHOR_Seven_Slide_Presentation.pdf`) with a
+  keyboard-operable in-app slide deck.
+- CI: the "committed build matches a fresh build" step now diffs `web/` instead of checking that
+  three files exist; a Playwright browser-smoke job and a manual axe-core job were added.
+- Documentation: view counts corrected to eleven routed views (twelve panels with the expanded
+  atlas); the personal-baseline / NASA-research boundary restated in README, SUBMISSION and
+  ARCHITECTURE; ARCHITECTURE gains four plain-text data pathways; ACCESSIBILITY separates earlier
+  runs from unrun checks; ROADMAP.md, two issue templates and a conservative Dependabot config added.
+
 ## Judging polish update
 
 - Added a three-step synthetic judging walkthrough on Mission overview, with a guard that keeps

@@ -8,3 +8,6 @@
 # NASA source bytes must stay byte-identical: the app verifies their SHA-256 on load.
 *.csv -text
 *.json -text
+*.mp4 binary
+*.webm binary
+*.srt text eol=lf

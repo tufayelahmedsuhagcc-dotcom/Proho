@@ -1,85 +1,60 @@
-# Demo assets · script and deck
+# PROHOR demo: problem → observation → explanation → human review
 
-Two accepted demo formats: a **30-second video** or **up to 7 slides**. Both are below; use one.
+This is a practical walkthrough, not a claim about current submission requirements. Check the official [2026 participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/) and your local event instructions for the current format, deadlines and judging guide.
 
----
+## Suggested live walkthrough
 
-## A. 30-second video script
+1. **Problem and solution:** Explain that a crew member needs an understandable way to compare health observations when resources are limited. PROHOR is a non-diagnostic prototype that organizes readings, explains change and prepares a handover.
+2. **Synthetic scenario:** On Mission overview, select **See the change** in the guided tour. This switches to the labeled synthetic CDR-01, FD 146 scenario. Trends shows a 5.6-hour simulated sleep reading against its 7.4-hour synthetic personal median.
+3. **Explain the rule:** Show the baseline window, coverage, median, change band and direction. The rule is a developer-selected heuristic, not a clinical threshold. A missing baseline or an unflagged value is not proof of health.
+4. **Research in a separate context:** Return to the guided tour and select **Explore the evidence**. The OSD-575 explorer uses historical Inspiration4 metabolic-panel data. Its values do not cause or validate the simulated sleep flag. Show the NASA study link, checksum and source-row information.
+5. **Human handover:** Use **Prepare for review**. Export a handover and explain that the app creates a local file; it does not send anything to a clinician.
+6. **Limitations and questions:** Open **Judges’ resources** for separate data, technical, safety and demo dossiers. Explain that local storage is not encrypted, no live health sensor is connected, and clinical validation is future work.
 
-Target: **30.0 s**, ~78 spoken words. Screen recording of the live deploy at 1440×900, cursor
-visible, no music louder than the voice, English (or burned-in English subtitles).
+## Before presentation
 
-| Time      | On screen                                                                                                                     | Voiceover                                                                                                                             |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| 0:00–0:05 | Overview, CDR-01, flight day 146. Five flags visible.                                                                         | "On a long mission, no one can walk into a clinic. This crew member has five readings to review — and no doctor nearby."              |
-| 0:05–0:11 | Click _Trends & baselines_ on sleep: median, IQR band, 30 prior days, rule line.                                              | "PROHOR compares each reading only against that person's own prior days, and shows how much data supports the comparison."            |
-| 0:11–0:18 | Hover the coverage figure; then open _NASA evidence_, choose glucose + C001, show source row numbers and the 80 mg/dL median. | "Every flag opens its evidence — here, the original Inspiration4 dataset, parsed in the browser and recomputed in front of you."      |
-| 0:18–0:24 | Log a new reading → switches to _Local workspace_ → "insufficient prior data" state.                                          | "Log a new reading and it refuses to reassure you: two days of data is not a baseline."                                               |
-| 0:24–0:30 | _Care plan_ → done → _Crew handover_ → export packet → logo.                                                                  | "One conservative next step, and a handover the flight surgeon can actually read. PROHOR. Not a diagnosis — a clearer next question." |
+- Verify the live link, all PDF downloads, the public repository and any demonstration video in a private window.
+- Open the site online and wait for its cache to install before relying on offline access. Browser storage limits can prevent persistence.
+- Review all team names, actual AI-tool disclosures and source links. Keep real health details out of a shared demonstration.
+- Check the current official rules and your Local Lead’s instructions. A polished demo does not guarantee an award.
 
-**Recording checklist**
+## The 30-second film (recorded — in this repository)
 
-- Record at 1440×900 or 1280×720, 30 fps; keep the browser chrome out of frame.
-- Pre-seed the _Local workspace_ with a 2-day history so the insufficient-data state appears instantly.
-- Wait for **Offline ready** before recording — then the whole demo also works with Wi-Fi off,
-  which is worth saying out loud if you have two spare seconds.
-- Export H.264 MP4, upload **public** to YouTube; verify in a private window.
+| Property     | Value                                                                                                                                   |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| File         | [`public/media/prohor-30-second.mp4`](../public/media/prohor-30-second.mp4)                                                             |
+| Measured     | 29.90 s, 1920×1080, H.264, 30 fps, mono AAC narration, 2.6 MB (ffprobe, 2026-11-12)                                                     |
+| Captions     | Burned in, with [`prohor-30-second.srt`](../public/media/prohor-30-second.srt) and a plain transcript beside the file                   |
+| Poster       | [`prohor-short-poster.jpg`](../public/media/prohor-short-poster.jpg)                                                                    |
+| Source build | A local production build (`npm ci && npm run build && npm start`), captured at 1440×1050                                                |
+| Narration    | Says "simulated readings with personal baselines" and "prepares a handover for human review" — the boundary is spoken, not only written |
+| Scope        | No diagnosis, no dose estimate, no claim of astronaut use; the NASA view is called a research explorer, not validation                  |
 
----
+Longer cut for asynchronously reviewing judges: [`prohor-four-minute.mp4`](../public/media/prohor-four-minute.mp4) (3:49.5, 17 MB) with its own `.srt` and transcript.
 
-## B. Seven-slide deck
+**Publication status:** the files are local repository assets. They are not uploaded to any video
+host, and the submission form is not filled in. Publishing — or pasting a public URL into a form —
+needs the owner's explicit approval, and the served URL only exists after the branch is merged and
+deployed.
 
-16:9. One idea per slide, ≤25 words of body text. Screenshots on slides 2, 4 and 6.
+### If it has to be re-recorded (30 s, six beats)
 
-**1 · Title**
-PROHOR — Mission Health Intelligence
-_Your readings. Your baseline. A clearer next step._
-Challenge · team · live link (as text, not a QR code only).
+| Time      | Beat                                | On screen                                                  |
+| --------- | ----------------------------------- | ---------------------------------------------------------- |
+| 0:00–0:02 | Team and name                       | Overview, top banner with the synthetic-data badge visible |
+| 0:02–0:08 | The problem in one sentence         | Overview headline, no scrolling                            |
+| 0:08–0:14 | One reading → personal baseline     | Trends & baselines: median, IQR, coverage, sample count    |
+| 0:14–0:19 | Rule and explanation, then one step | Care plan panel for the flagged system                     |
+| 0:19–0:24 | A handover for a human              | Crew handover: notes and local download                    |
+| 0:24–0:30 | NASA evidence, kept separate        | NASA evidence: checksum line and source row numbers        |
 
-**2 · The moment**
-Screenshot: overview at flight day 146.
-"Up to twenty-two minutes of light-time delay. Five readings to review. No clinic."
-The gap: today's tools give a colour, not a reason.
+Record at 1440×1050 or 1920×1080, one take per beat, no live typing of real health data, and keep
+the "SYNTHETIC" and "research prototype" labels inside the frame.
 
-**3 · Why a colour fails**
-Three-line argument: a flag without its baseline, day count and rule is unfalsifiable; a score
-without its limits invites over-trust. What a crew member needs is a _traceable_ comparison.
+## The seven-slide deck (primary artefact)
 
-**4 · What PROHOR does**
-Screenshot: trends + baseline panel.
-Median/IQR over distinct prior days · 7-day minimum · coverage shown · rule exposed ·
-insufficient-data state instead of a green light.
-
-**5 · The evidence is inspectable**
-Screenshot: NASA evidence view.
-Original OSD-575 CSV, SHA-256 verified, 531 observations, four coded subjects, source row
-numbers, recomputed medians, stated limits.
-
-**6 · From observation to action**
-Screenshot: care plan + handover packet.
-One conservative routine step → documented → exported for the flight surgeon. The packet, not the
-alert, is the product.
-
-**6b · Where to dig deeper**
-Judges' resources → four dossiers (mission, data, technology, safety) plus a single ZIP.
-"Everything you just saw, in writing, with sources."
-
-**7 · Boundaries and what's next**
-Not a medical device · no diagnosis or dose estimate · unencrypted single-user storage ·
-four-crew archive cannot set long-mission thresholds.
-Next: validated indicator set with flight surgeons, on-orbit data ingestion, multi-crew roles.
-Live link + repo link, large and legible.
-
----
-
-## C. Judge-proofing before you submit
-
-- [ ] Live link opens in a private window with no login (test on a phone too).
-- [ ] GitHub repository is **public** and the MIT licence is visible in the repo header.
-- [ ] Video URL is public and playable without a Google account.
-- [ ] All team members are registered on the team page (max six).
-- [ ] The "consider for Global Judging" box is checked.
-- [ ] Every screenshot in the deck shows the current white build.
-- [ ] No NASA logo or NASA endorsement language anywhere.
-- [ ] Every PDF in `public/docs/` opens from the live link, not just from the repo.
-- [ ] The ZIP downloads and contains all four dossiers.
+[`public/docs/PROHOR_Seven_Slide_Presentation.pdf`](../public/docs/PROHOR_Seven_Slide_Presentation.pdf)
+— 7 slides, ~1.1 MB, readable without the app; slide images are in
+[`public/slides/`](../public/slides/) and render inside the judges' page. The deck is the primary
+artefact; the film is optional supporting material, and the judges' brief (4 pages) covers the same
+ground in text.
