@@ -41,7 +41,7 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
     "express": "^5.1.0",
-    "lucide-react": "^0.468.0",
+    "lucide-react": "^1.71.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
