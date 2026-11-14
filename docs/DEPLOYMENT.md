@@ -71,7 +71,7 @@ Included `vercel.json` configures:
 
 Upload the whole project to a repository or your hosting provider, install from `package-lock.json`, and use the included settings. The function has a 30-second maximum duration; upstream calls time out earlier. No health data should be added as an environment variable or backend upload.
 
-The live prototype runs on this configuration at **https://prohor-rho.vercel.app**. To deploy
+The live prototype runs on this configuration at **https://prohor.health** (custom domain), also served at **https://prohor-rho.vercel.app**. To deploy
 your own copy, import the repository into Vercel — `vercel.json` needs no edits — then check the
 public URL in a private window: both `/api/feeds` variants, offline readiness, an import and an
 export, and one legacy path. A preview URL from a development sandbox is not a public deployment;

@@ -4,10 +4,11 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520.19-0f766e.svg)](package.json)
-[![Live demo](https://img.shields.io/badge/demo-prohor--rho.vercel.app-0f766e.svg)](https://prohor-rho.vercel.app)
+[![Live demo](https://img.shields.io/badge/demo-prohor.health-0f766e.svg)](https://prohor.health)
+[![Mirror](https://img.shields.io/badge/mirror-prohor--rho.vercel.app-4c6355.svg)](https://prohor-rho.vercel.app)
 [![CI](https://github.com/tufayelahmedsuhagcc-dotcom/prohor/actions/workflows/ci.yml/badge.svg)](https://github.com/tufayelahmedsuhagcc-dotcom/prohor/actions/workflows/ci.yml)
 
-**Live prototype:** [prohor-rho.vercel.app](https://prohor-rho.vercel.app) · **Source:** [github.com/tufayelahmedsuhagcc-dotcom/prohor](https://github.com/tufayelahmedsuhagcc-dotcom/prohor) · **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) (2026 NASA Space Apps Challenge)
+**Live prototype:** [prohor.health](https://prohor.health) · **Mirror (same build):** [prohor-rho.vercel.app](https://prohor-rho.vercel.app) · **Source:** [github.com/tufayelahmedsuhagcc-dotcom/prohor](https://github.com/tufayelahmedsuhagcc-dotcom/prohor) · **Challenge:** [Create Health Monitoring Software for Astronauts on Space Missions](https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/) (2026 NASA Space Apps Challenge)
 
 ### At a glance
 
@@ -30,7 +31,7 @@
 
 | If you have                 | Start here                                                                                                                                                                                                                                                                                                                         |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **30 seconds**              | The [live prototype](https://prohor-rho.vercel.app) — follow the _One reading. A clearer story_ guided steps                                                                                                                                                                                                                       |
+| **30 seconds**              | The [live prototype](https://prohor.health) — follow the _One reading. A clearer story_ guided steps                                                                                                                                                                                                                               |
 | **No click-through**        | [Judges' brief, 4 pages](public/docs/PROHOR_Judges_Brief.pdf) — or the in-app library: [mission](public/docs/PROHOR_01_Mission_and_Demo.pdf) · [data](public/docs/PROHOR_02_Data_and_Evidence.pdf) · [technology](public/docs/PROHOR_03_Technology_and_Method.pdf) · [safety](public/docs/PROHOR_04_Safety_Impact_and_Roadmap.pdf) |
 | **Watch 30 s**              | [The 30-second film](public/media/prohor-30-second.mp4) — real capture of this build, narrated and captioned; the same film plays in-app on the overview and judges' pages                                                                                                                                                         |
 | **One page, judged**        | [Seven-slide deck (PDF)](public/docs/PROHOR_Seven_Slide_Presentation.pdf) — the narrative without the app; slide images in `public/slides/`                                                                                                                                                                                        |

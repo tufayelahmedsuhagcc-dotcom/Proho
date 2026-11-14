@@ -56,7 +56,7 @@ y=label('Try it in three steps',y)
 for t in ['<b>01  Observe.</b> Open Mission overview and choose “See the change” in the guided tour. The synthetic scenario selects CDR-01, flight day 146; inspect the sleep change in Trends.', '<b>02  Understand.</b> Review the prior-day median, coverage and rule explanation. Visit NASA evidence to explore the historical OSD-575 metabolic panel separately from the demo.', '<b>03  Prepare.</b> Open Crew handover to inspect and export a structured summary. Data &amp; settings provides local CSV import/export and controls.']:
     y=para(t,y)-11
 y-=5
-y=para(f'{link("Open PROHOR", "https://prohor-rho.vercel.app/")}  ·  {link("Source repository", "https://github.com/tufayelahmedsuhagcc-dotcom/prohor")}  ·  {link("Official challenge", "https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/")}',y,small)
+y=para(f'{link("Open PROHOR", "https://prohor.health/")}  ·  {link("Source repository", "https://github.com/tufayelahmedsuhagcc-dotcom/prohor")}  ·  {link("Official challenge", "https://www.spaceappschallenge.org/2026/challenges/health-monitoring-software/")}',y,small)
 c.showPage()
 
 header(2); title('Where the data comes from.','INTEGRATIONS  /  TRACEABILITY  /  BOUNDARIES')

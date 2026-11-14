@@ -48,7 +48,7 @@ for idx,(kicker,title,desc,points,img) in enumerate(slides):
  c.setFillColor(HexColor('#4e6858'));c.setFont('Inter',8);c.drawString(x,iy-19,'UPDATED LOCAL BUILD  /  REAL APP CAPTURE')
  c.setStrokeColor(HexColor('#d6e4d9'));c.line(40,61,W-40,61)
  c.setFillColor(HexColor('#516c5a'));c.setFont('InterBold',8);c.drawString(40,39,'TEAM SKORPE MONAD');c.drawRightString(W-40,39,'RESEARCH PROTOTYPE  ·  NOT A MEDICAL DEVICE')
- c.linkURL('https://prohor-rho.vercel.app', (40,20,250,51), relative=0)
+ c.linkURL('https://prohor.health', (40,20,250,51), relative=0)
  if idx==4:c.linkURL('https://osdr.nasa.gov/bio/repo/data/studies/OSD-575',(48,110,440,260),relative=0)
  c.showPage()
 c.save();print('Wrote',OUT)

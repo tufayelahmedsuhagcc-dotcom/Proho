@@ -10,7 +10,7 @@ type: software
 license: MIT
 version: 3.0.0
 repository-code: "https://github.com/tufayelahmedsuhagcc-dotcom/prohor"
-url: "https://prohor-rho.vercel.app"
+url: "https://prohor.health"
 keywords:
   - astronaut health
   - NASA Space Apps Challenge
