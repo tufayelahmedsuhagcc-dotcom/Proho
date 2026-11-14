@@ -23,6 +23,7 @@ import {
   Command,
   ArrowRight,
 } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 import { useProhor } from "./lib/context";
 import { Modal, Notice } from "./components/UI";
 import { LogModal } from "./components/LogModal";
@@ -502,6 +503,7 @@ export default function App() {
           </>
         )}
       </div>
+      <Analytics />
     </div>
   );
 }
